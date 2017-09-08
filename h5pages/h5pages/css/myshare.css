@@ -1,0 +1,54 @@
+
+.img1 {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: -0.01rem;
+}
+
+.wp {
+	position: relative;
+}
+
+.member-img {
+    width: .75rem;
+    height: .75rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -.37rem;
+    margin-top: 0.23rem;
+}
+
+p {
+	width: 81%;
+	position: absolute;
+	font-family: PingFangSC-Regular;
+	font-size: .16rem;
+	color: #FFFFFF;
+	letter-spacing: 0.01px;
+	line-height: .26rem;
+    left: 50%;
+    margin-left: -40%;
+    top: 1.1rem;
+}
+
+.member-img img {
+    width: 100%;
+}
+
+.button {
+	width: 77%;
+	background: #F42C49;
+	border-radius: 100px;
+	font-family: PingFangSC-Medium;
+	font-size: 0.15rem;
+	color: #FFFFFF;
+	height: 0.35rem;
+	letter-spacing: 0.01px;
+	line-height: .35rem;
+	position: absolute;
+    left: 50%;
+    margin-left: -38%;
+    top: 5rem;
+    text-align: center;
+}

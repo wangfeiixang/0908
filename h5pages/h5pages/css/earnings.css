@@ -1,0 +1,162 @@
+.earning a{
+    color: #FFFFFF;
+}
+  section{
+    position: relative;
+  }
+  .earning {
+    overflow: hidden;
+  }
+
+  .balance {
+    text-align: center;
+    font-size: .14rem;
+    color: #DDC4FF;
+    letter-spacing: 0;
+  }
+
+  h1{
+    font-size: .48rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: .48rem;
+    text-align: center;
+    margin-top: .07rem;
+    font-weight: 700;
+  }
+
+ .earning p {
+   float: left;
+   width: 1.2rem;
+   height: 0.3rem;
+   line-height: 0.3rem;
+   font-size: .14rem;
+   color: #FFFFFF;
+   letter-spacing: 0.01px;
+   margin-top: 0.21rem;
+ }
+  .earning p span{
+    margin-left: 30%;
+  }
+
+  .tixian {
+    margin-right: 0.3rem;
+    background: url(../img/min/btn_tixian_n.png) no-repeat;
+    background-size: 100%;
+  }
+
+   .mingxi {
+    background: url(../img/min/btn_mingxi_n.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .earning-wp {
+    position: relative;
+    margin: auto;
+    width: 88%;
+    height: 0.8rem;
+    background: #FFFFFF;
+    box-shadow: 0 6rem 10rem 0 rgba(0,0,0,0.11);
+    border-radius: 10px;
+    margin-top: 0.25rem;
+  }
+
+  .earning-wp span {
+    display: inline-block;
+    width: 32%;
+    height: 0.4rem;
+    margin-top: 0.2rem;
+    border-right: 1px solid #d8d8d8;
+    text-align: center;
+  }
+
+  .earning-wp span:last-child{
+    border: none;
+  }
+
+  .earning-wp .num{
+    font-family: Roboto-Regular;
+    font-size: .16rem;
+    color: #555555;
+    letter-spacing: 0;
+    margin-bottom: 0.03rem;
+  }
+
+  .earning-wp .intro{
+    font-family: PingFangSC-Light;
+    font-size: .12rem;
+    color: #999999;
+    letter-spacing: 0;
+  }
+
+  .h-10-colo {
+    margin-top: 0.33rem;
+    height: 0.1rem;
+    background-color: #f6f6f6;
+  }
+  .profit {
+    width:100%;
+    height: 1.3rem;
+  }
+
+  .profit-div1{
+    overflow: hidden;
+    width: 91%;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    border-bottom: 1px solid #e6e6e6;
+    margin: auto;
+  }
+
+  .profit-div2{
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 0.78rem;
+    margin: auto;
+  }
+
+  .profit-span1{
+    font-family: PingFangSC-Regular;
+    font-size: .15rem;
+    color: #555555;
+    letter-spacing: 0.01px;
+  }
+
+  .profit-span2{
+    font-family: PingFangSC-Medium;
+    font-size: .20rem;
+    color: #FF5A6E;
+    letter-spacing: 0;
+  }
+
+  .profit-span3 {
+    float: right;
+    font-family: PingFangSC-Light;
+    font-size: .11rem;
+    color: #8A8E91;
+    letter-spacing: 0;
+  }
+
+  .profit-span4{
+    width: 50%;
+    float: left;
+    font-family: PingFangSC-Light;
+    font-size: .11rem;
+    color: #8A8E91;
+    letter-spacing: 0;
+    margin-top: 0.16rem;
+  }
+
+
+  .profit-span4 .num{
+    font-family: Roboto-Regular;
+    font-size: .20rem;
+    color: #555555;
+    letter-spacing: 0;
+  }
+
+  .help-h3 {
+    height:1.5rem;
+    background-color: #f6f6f6;
+  }

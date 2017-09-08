@@ -1,0 +1,137 @@
+
+  .pay-div {
+    width: 83%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: .35rem;
+  }
+
+  .pay-diamond {
+    width: 46%;
+    height: 1.8rem;
+    float: left;
+    background: #FFFFFF;
+    border-radius: 10px;
+    background-size: 100%;
+    position: relative;
+  }
+
+  .pay-diamond.redbg {
+     background: url(../img/member/card_redbg_n.png) no-repeat;
+    background-size: 100%;
+
+   }
+
+  .pay-diamond img {
+    width: 70%;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 15%;
+  }
+
+  .pay-diamond.purple {
+    background: url(../img/member/card_purplebg_n.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .pay-diamond:first-child{
+    margin-right: 20px;
+  }
+
+  .member-men img{
+    width: .22rem;
+    height: .18rem;
+  }
+
+  .choose-pay{
+    background: #F6F6F6;
+    font-size: .11rem;
+    color: #999999;
+    letter-spacing: 0.01px;
+    height: 0.28rem;
+    line-height: 0.28rem;
+    width: 100%;
+    margin-top: 0.29rem;
+    text-indent: .15rem;
+  }
+
+
+  .cyc-footer .cyc-pay-w {
+    float: left;
+    width: 55%;
+    height: 0.5rem;
+    margin-left: 0.15rem;
+    text-align: left;
+    font-family: PingFangSC-Regular;
+    font-size: .15rem;
+    color: #555555;
+    letter-spacing: 0.01px;
+  }
+
+  .cyc-footer .cyc-pay1 span {
+    font-size: .15rem;
+    color: #FF2B45;
+    letter-spacing: 0.01px;
+  }
+
+  .cyc-footer .cyc-btn{
+    background: #9666C4;
+    float: right;
+    width:36%;
+    height: 0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    letter-spacing: -.34px;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+  }
+
+  .pay-alipay {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    border-bottom: 0.5px solid #e6e6e6;
+    overflow: hidden;
+  }
+
+  .pay-alipay .alipay{
+     width: .22rem;
+     height: .22rem;
+     background: url(../img/member/ic_alipay.png) no-repeat;
+     background-size: 100%;
+    margin-left: .15rem;
+    margin-right: .05rem;
+   }
+  .pay-alipay .wexin{
+    width: .22rem;
+    height: .22rem;
+    background: url(../img/member/ic_weixin.png) no-repeat;
+    background-size: 100%;
+    margin-left: .15rem;
+    margin-right:.0.05rem;
+  }
+
+  .pay-alipay a{
+    float: right;
+    width: .20rem;
+    height: .20rem;
+    margin-right: .15rem;
+    margin-top: 5%;
+  }
+
+  .pay-alipay a.chk[checked='checked']{
+    background: url(../img/member/btn_radio_s.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .pay-alipay a.chk{
+    background: url(../img/member/btn_radio_n.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .bg-f6{
+    background-color: #f6f6f6;
+    height: 0.7rem;
+    z-index: -1;
+  }

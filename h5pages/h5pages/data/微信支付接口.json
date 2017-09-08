@@ -1,0 +1,6 @@
+{
+  "userId":"" ,
+  "orderId":"" ,// 订单号
+  "totalMoney":"总价",
+  "productName" :"产品名称"
+}

@@ -1,0 +1,100 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    background:linear-gradient(to right ,#D68AF5, #B15AE5);
+    background:-webkit-linear-gradient(to right ,#D68AF5, #B15AE5);
+    height: .48rem;
+    z-index: 600;
+    line-height: .48rem;
+    font-family: SourceHanSans-Normal;
+}
+
+header .logo {
+    font-size: .18rem;
+}
+
+header a.back {
+    position: absolute;
+    left: .13rem;
+    top: .16rem;
+    height: .20rem;
+    width: .20rem;
+    background: url(../img/login/btn_nav_back_nor.png) no-repeat center center;
+    /*background: url(../../src/assets/login/btn_nav_back_nor.png) no-repeat center center;*/
+    -webkit-background-size: .10rem auto;
+    background-size: .10rem auto;
+    display: inline-block;
+}
+
+header a.phone {
+    position: absolute;
+    right: .13rem;
+    top: .15rem;
+    height: .20rem;
+    width: .20rem;
+    /*// background: url(../../images/icon/tel.png) no-repeat center center;*/
+    -webkit-background-size: .20rem auto;
+    background-size: .20rem auto;
+    display: inline-block;
+}
+
+header .l {
+    position: absolute;
+    top: 0rem;
+    left: .15rem;
+    color: #ffffff;
+}
+
+header .r {
+    position: absolute;
+    top: 0rem;
+    right: .15rem;
+    color: #ffffff;
+}
+
+/* add by yu*/
+header font {
+	font-size: .18rem;
+	color: #ffffff;
+	line-height: .18rem;
+}
+header .r font {
+	font-size: .12rem;
+	color: #ffffff;
+	line-height: .10rem;
+}
+
+.help {
+	height: .48rem;
+}
+
+.help1 {
+    height: .48rem;
+}
+
+section {
+	width: 75%;
+	margin: auto;
+    margin-top:.43rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

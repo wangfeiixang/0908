@@ -1,0 +1,85 @@
+.member-bg {
+    height: 2.52rem;
+    width:100%;
+    background: url(../img/member/vip_topbg.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+
+.no-bgcolor {
+    background:none;
+}
+
+.member-img {
+    width: .75rem;
+    height: .75rem;
+    margin: auto;
+    position: relative;
+}
+
+.member-img img {
+    width:100%;
+}
+
+.member-men{
+    text-align: center;
+    color: #fff;
+    font-size: .16rem;
+    margin-top: .15rem;
+}
+
+.member-div {
+    position: relative;
+    background: #fff;
+    margin-top: .20rem;
+  border-radius: .10rem;
+}
+
+.member-ul {
+  background: #FFFFFF;
+  box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.11);
+  border-radius: .10rem;
+  margin: auto;
+  height: 3.00rem;
+}
+
+.member-li {
+    width: 82%;
+    margin: auto;
+    height: .62rem;
+    line-height: .62rem;
+  border-bottom: 1px solid #e6e6e6;
+  overflow: hidden;
+  font-size: .13rem;
+  position: relative;
+}
+
+.member-li:last-child{
+  border-bottom: none;
+}
+
+.member-li>span.right-span{
+
+  float: right;
+}
+
+ .member-li i {
+    width: .15rem;
+    height: .15rem;
+    background-size: 100%;
+  
+}
+
+.ic_vipup {
+    background: url(../img/member/ic_vipup.png);
+}
+
+.ic_qa {
+    background: url(../img/member/ic_qa.png);
+
+}
+
+.ic_tel{
+    background: url(../img/member/ic_tel.png);
+
+}

@@ -1,0 +1,111 @@
+
+
+  .participation {
+    width: 85%;
+    margin: auto;
+    height: 1.6rem;
+    background: url(../img/min/card_bg.png) no-repeat;
+    background-size: 100%;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+
+   .participation >p {
+     font-size: .15rem;
+     color: #FFFFFF;
+     letter-spacing: 0.01px;
+     height: 0.39rem;
+     line-height: 0.39rem;
+     text-align: center;
+     border-bottom: 0.5px solid #ffffff;
+  }
+  .participation span {
+    width:49%;
+    height: 0.39rem;
+    line-height: 0.39rem;
+    display: inline-block;
+    font-size: .15rem;
+    color: #FFFFFF;
+    letter-spacing: 0.01px;
+    text-align: center;
+    margin-top: 0.2rem;
+  }
+
+ .line {
+   position: absolute;
+   height: 0.6rem;
+   width:.01rem;
+   background: #ffffff;
+   right:50%;
+   top: 50%;
+   margin-top: -0.2rem;
+   color: #ffffff;
+   opacity:0.47;
+
+ }
+
+  .p-text1{
+    font-size: .2rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+  }
+  .p-text2{
+    font-size: .12rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+  }
+
+  .sum input {
+    width: 50%;
+    font-size: .40rem;
+    height: 0.4rem;
+    line-height: 1rem;
+    color: #111111;
+    letter-spacing: 0.01px;
+  }
+
+  input::-webkit-input-placeholder{
+    color: #ccc;
+    font-size: .20rem;
+    line-height: 1rem;
+    margin-bottom: .10rem;
+  }
+
+
+
+  .earning-wp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 0.8rem;
+    background: #FFFFFF;
+    border-bottom: 0.5px solid #e6e6e6;
+  }
+
+  .earning-wp span {
+    display: inline-block;
+    width: 32%;
+    height: 0.4rem;
+    margin-top: 0.2rem;
+    border-right: 0.5px solid #d8d8d8;
+    text-align: center;
+  }
+
+  .earning-wp span:last-child{
+    border: none;
+  }
+
+  .earning-wp .num{
+    font-family: Roboto-Regular;
+    font-size: .16rem;
+    color: #555555;
+    letter-spacing: 0;
+    margin-bottom: 0.03rem;
+  }
+
+  .earning-wp .intro{
+    font-family: PingFangSC-Light;
+    font-size: .12rem;
+    color: #999999;
+    letter-spacing: 0;
+  }
