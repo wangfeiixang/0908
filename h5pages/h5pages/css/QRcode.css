@@ -1,0 +1,38 @@
+
+
+  .member-bg {
+    height: 2.8rem;
+    background: url(../img/min/2_bg.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .mine {
+    position: relative;
+    width: 83%;
+    margin: auto;
+    margin-top: .2rem;
+    height: 3.64rem;
+    line-height: 2.64rem;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #ffffff;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, #FFFFFF 99%);
+  }
+
+  .code {
+    display: inline-block;
+    width: 75%;
+    margin: auto;
+    height: 2.28rem;
+  }
+
+  .mine p {
+    width: 75%;
+    margin: auto;
+    text-align: left;
+    font-size: .13rem;
+    color: #666666;
+    letter-spacing: 0.01px;
+    line-height: .22rem;
+  }
+

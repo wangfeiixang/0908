@@ -1,0 +1,36 @@
+{
+  "totalNum":"120",
+  "redNum":"20" ,
+  "prupleNum":"30",
+  "type":"all",
+  "userList":[
+    {
+     "nickName":"李55三",
+      "phoneNum":"17640464710",
+      "clubberType":"DIAMOND_PURPLE",
+      "regDate":"2017-8-15",
+      "childNum":"6"
+    },
+    {
+      "nickName":"李55",
+       "phoneNum":"17640464710",
+       "clubberType":"DIAMOND_PURPLE",
+       "regDate":"2017-8-15",
+       "childNum":"16"
+     },
+     {
+      "nickName":"李2",
+       "phoneNum":"17640464710",
+       "clubberType":"DIAMOND_PURPLE",
+       "regDate":"2017-8-15",
+       "childNum":"26"
+     },
+     {
+      "nickName":"李三663",
+       "phoneNum":"17640464710",
+       "clubberType":"DIAMOND_PURPLE",
+       "regDate":"2017-8-15",
+       "childNum":"36"
+     }
+  ]
+}

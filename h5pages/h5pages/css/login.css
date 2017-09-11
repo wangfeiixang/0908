@@ -1,0 +1,132 @@
+.color-ca88 {
+	background-color: #f2f2f2;
+	color: #aaaaaa;
+}
+
+.color-f2-a{
+	background: #CA88ED;
+	color: #fff;
+}
+
+
+.input {
+	height: .50rem;
+    border-bottom: 1px solid #ddd;
+    line-height: .50rem;
+	color: #ccc;
+	position: relative;
+}
+
+
+input {
+	display: inline-block;
+	outline: none;
+}
+
+
+.p-wp{
+	overflow: hidden;
+}
+
+.log-p {
+	margin-top: .165rem;
+	float: right;
+	font-size: .11rem;
+	color: #999999;
+	letter-spacing: 0;
+}
+
+.login {
+	width: 100%;
+	height: .36rem;
+	line-height: .36rem;
+	font-size: .14rem;
+	text-align: center;
+	color: #fff;
+	margin-top: .26rem;
+	border-radius: 1rem;
+}
+
+.sign-code {
+	position: absolute;
+	right:0;
+	font-size: .11rem;
+	color: #B060D0;
+	letter-spacing: 0;
+}
+
+lable .read-n {
+	width: .12rem;
+	height: .12rem;
+
+	background: url(../img/login/btn_read_n.png) no-repeat;
+	background-size: 100%;
+}
+
+lable .read-y{
+	background: url(../img/login/btn_read_s.png) no-repeat;
+}
+
+lable p {
+	display: inline-block;
+	font-size: .11rem;
+	color: #999999;
+	letter-spacing: 0;
+	margin-top: .16rem;
+}
+
+lable a {
+	font-size: .11rem;
+	color: #000011;
+	letter-spacing: 0;
+}
+
+.sign-no {
+	margin-top: .75rem;
+	font-size: .13rem;
+	color: #B060D0;
+	letter-spacing: 0;
+	text-align: center;
+}
+i.password{
+  width: .14rem;
+  height: .08rem;
+  position: absolute;
+  right:.15rem;
+  top: 50%;
+  margin-top: -.04rem;
+}
+
+
+i.eye-n{
+	background: url(../img/login/btn_eye_n.png) no-repeat;
+  background-size: 100%;
+}
+
+i.eye-s {
+	background: url(../img/login/btn_eye_s.png) no-repeat;
+  background-size: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
