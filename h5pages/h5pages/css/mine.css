@@ -9,26 +9,12 @@
     margin-top: .6rem;
     height: 2.85rem;
     overflow: hidden;
-  }
-  .mine a{
-    float: left;
-    width:50%;
-    text-align: center;
-  }
-  .mine a:nth-of-type(1){
-    border-bottom: 0.5px solid #cccccc;
-  }
-  .mine a:nth-of-type(2){
-    border-bottom: 0.5px solid #cccccc;
-  }
-
-  .mine a:nth-of-type(2n){
-    border-left:0.5px solid #cccccc ;
+   
   }
 
   .mine dl{
+  	width:100%;
     height: 0.9rem;
-    display: inline-block;
     text-align: center;
   }
 
@@ -36,23 +22,31 @@
     width: .34rem;
     height: .33rem;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 20%;
     margin-bottom: .15rem;
   }
 
   .data {
-    background: url(../img/min/ic_user_my.png) no-repeat;
+    background: url(../img/team/ic_user_my.png) no-repeat;
     background-size: 100%;
   }
   .card {
-    background: url(../img/min/ic_user_my_card.png) no-repeat;
+    background: url(../img/team/ic_user_my_card.png) no-repeat;
     background-size: 100%;
   }
   .code {
-    background: url(../img/min/ic_user_my_2.png) no-repeat;
+    background: url(../img/team/ic_user_my_2.png) no-repeat;
     background-size: 100%;
   }
   .share {
-    background: url(../img/min/ic_user_my_share.png) no-repeat;
+    background: url(../img/team/ic_user_my_share.png) no-repeat;
+    background-size: 100%;
+  }
+  .group{
+  	background: url(../img/team/ic_group.png) no-repeat;
+    background-size: 100%;
+  }
+	.expand{
+  	background: url(../img/team/ic_expand.png) no-repeat;
     background-size: 100%;
   }

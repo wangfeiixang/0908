@@ -75,7 +75,6 @@
             right: .15rem;
             top: 50%;
             display: none;
-            /* margin-top: -0.04rem; */
         }
 
         #btn-again{
@@ -98,6 +97,15 @@
             background: #F2F2F2;
             color:#999;
         }
+
+        /* .err-box{
+            width:10%;
+            height:100%;
+            display:block;
+            position: relative;
+            right:0;
+            top:0;
+        } */
    
 
 
@@ -114,7 +122,9 @@
         <section>
             <div class="input">
                 <input autocomplete="off" type="text" name="phone" id="user" placeholder="输入手机号">
-                <i class="err"></i>
+                <span class="err-box">
+                    <i class="err"></i>
+                </span>
             </div>
             <div class="input">
                 <input autocomplete="off"  type="text" name="verifyCode" placeholder="输入验证码">
@@ -136,7 +146,7 @@
         </section>
     </form>
     <div class="message-box">
-            <span></span>
+         <span></span>
     </div>
 </body>
 

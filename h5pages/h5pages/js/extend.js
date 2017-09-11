@@ -13,6 +13,7 @@ $(function(){
             this.renderContent();
             this.tab();
             this.search();
+            this.swiper();
         },
         acceptData:function(url,type,boolean){
             //console.log( type,boolean )
@@ -20,7 +21,7 @@ $(function(){
           var that = this; 
           var deff = $.ajax({
                 type: "get",//post
-                url : url,//"../data/team/我的团队应答.json"
+                url : url,//"../data/team/我的推广应答.json"//static/ownStatic.jsp
                 data: {"action": "ownExtension","type":type},
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json",
@@ -59,7 +60,6 @@ $(function(){
                     +'</li>';
             // console.log(html)
             $(".content ul").html(html)
-           
         },
         renderContent:function(){//正式会员内容
             $('.message').show();
@@ -120,14 +120,7 @@ $(function(){
             var that = this;
             $(".content ul").on('tap',"li",function(){
                 // console.log('tap',this)
-                var member = $(this).find('p.member').html()
-                console.log( member )
-                $(this).addClass('active').siblings('li').removeClass("active");
-                switch( member ){
-                    case '普通会员':that.acceptData('../data/team/我的推广应答.json','NAMAL',true);break;
-                    case '直推推广专员':that.acceptData('../data/team/我的推广应答1.json','PROFESSIONAL',true);break;
-                    case '直推钻石专员':that.acceptData('../data/team/我的推广应答2.json','DIAMOND',true);break;
-                }
+                that.commonFunction(this);
                 // that.acceptData('all',false);
             })
         },
@@ -138,7 +131,7 @@ $(function(){
                 // console.log( '搜索',value )
                 if ( that.strPhone.test(value) ) {
                     console.log( '搜索成功' )
-                    that.acceptData('../data/team/我的推广应答.json','SERACH:'+value,true);
+                    that.acceptData('../data/team/我的推广应答2.json','SERACH:'+value,true);
                     $('.confirm').hide();
                     $('.message').show();
                 } else {
@@ -146,6 +139,26 @@ $(function(){
                     $('.confirm').show().find('span').html('请输入正确的手机号');
                     $('.message').hide();
                 }
+            })
+        },
+        commonFunction:function(_this){
+            var that = this;
+            var member = $(_this).find('p.member').html()
+            console.log( member )
+            $(_this).addClass('active').siblings('li').removeClass("active");
+            switch( member ){
+                case '普通会员':that.acceptData('../data/team/我的推广应答.json','NAMAL',true);break;
+                case '直推推广专员':that.acceptData('../data/team/我的推广应答1.json','PROFESSIONAL',true);break;
+                case '直推钻石专员':that.acceptData('../data/team/我的推广应答2.json','DIAMOND',true);break;
+            }
+            
+        },
+        swiper:function(){
+            var that = this;
+            $(".content ul").on('swipeleft','li',function(){
+                //alert( $(this).index() )
+                console.log(this)
+                that.commonFunction(this);
             })
         }
     }

@@ -7,7 +7,7 @@ $(function(){
         memberType:null,
         init:function(){
            // console.log(11)
-            this.acceptData('../data/team/我的团队应答.json','all',false);
+            this.acceptData('static/ownStatic.jsp','all',false);
             this.render();
             this.renderContent();
             this.tab();
@@ -18,7 +18,7 @@ $(function(){
           var that = this; 
           var deff = $.ajax({
                 type: "get",//post
-                url : url,//"../data/team/我的团队应答.json"
+                url : url,//"../data/team/我的团队应答.json"//static/ownStatic.jsp
                 data: {"action": "ownGroup","type":type},
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json",
@@ -64,7 +64,7 @@ $(function(){
            
         },
         renderContent:function(){//正式会员内容
-            console.log( 'renderContent',this.data.userList.length )
+           // console.log( 'renderContent',this.data.userList.length )
             var str = "";
             var label = '';
             if ( this.data.userList.length==0 ) {
@@ -111,10 +111,10 @@ $(function(){
                 // console.log( member )
                 $(this).addClass('active').siblings('li').removeClass("active");
                 switch( member ){
-                    case '会员':that.acceptData('../data/team/我的团队应答.json','all',true);break;
-                    case '红钻':that.acceptData('../data/team/我的团队应答1.json','red',true);break;
-                    case '紫钻':that.acceptData('../data/team/我的团队应答2.json','prople',true);break;
-                    case '本月':that.acceptData('../data/team/我的团队应答.json','month',true);break;
+                    case '会员':that.acceptData('static/ownStatic.jsp','all',true);break;
+                    case '红钻':that.acceptData('static/ownStatic.jsp','red',true);break;
+                    case '紫钻':that.acceptData('static/ownStatic.jsp','prople',true);break;
+                    case '本月':that.acceptData('static/ownStatic.jsp','month',true);break;
                 }
                 // that.acceptData('all',false);
             })

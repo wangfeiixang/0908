@@ -111,7 +111,7 @@ $(function(){
                 delay()
             };
             
-            if (  register.arrRegister[0] ) {
+            if (  register.arrRegister[0]  && register.arrRegister[2] ) {
                 if ( password==""  ) {
                     $('.message-box').show().find('span').html('请输入密码');
                     // console.log('111')
@@ -124,10 +124,17 @@ $(function(){
                  
              }  
 
-            if (  register.arrRegister[1] ) {
+            if (  register.arrRegister[1] && register.arrRegister[2] ) {
                 $('.message-box').show().find('span').html('请输入手机号');
                 delay()
-            } 
+            }
+
+            console.log( register.arrRegister[1],register.arrRegister[2] )
+            
+            if (  !register.arrRegister[2] ) {
+                $('.message-box').show().find('span').html('请点击用户协议');
+                delay()
+            }
 
             return false;
         }
