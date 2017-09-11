@@ -1,7 +1,0 @@
-{
-  "operationLevel": "一级或二级;如果为空,则显示未成为运营中心页面",
-  "getCash":"收益值",
-  "bankCardBingdingStatus":"Y/N",
-  "nDay":"N天后获取新的补贴",
-  "signature":"Y/N,是否签订合同"
-}
