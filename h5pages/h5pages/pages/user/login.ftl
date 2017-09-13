@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ratchet">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <#--<script src="../js/jquery.min.js"></script>-->
+    <script src="../js/base.js"></script>
+    <script src="../js/zepto.js"></script>
+    <script src="../js/touch.js"></script>
+    <script src="../js/login.js"></script>
+    <style>
+        .show{
+            display: none;
+        }
+        .hidden,.show{
+            width:90%;
+        }
+
+        input{
+            font-size: 0.16rem !important;
+            width: 80%;
+        }
+
+        .input i.eye-s{
+            background: url(../img/login/btn_eye_s.png)  no-repeat;
+            background-size: 100%;
+            display: none;
+        }
+
+        .message-box{
+            z-index: 999;
+            position: absolute;
+            border-radius: 5px;
+            left:0;
+            right:0;
+            top:3rem;
+            bottom:0;
+            margin: auto;
+            width:1.5rem;
+            height:.5rem;
+            font-size: .12rem;
+            text-align: center;
+            background: #999;
+            color:#fff;
+            display: none;
+        }
+
+        .message-box span{
+            width:1.5rem;
+            height:.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+
+        i.errx{
+            display: inline-block;
+            background: url(../img/login/CombinedShape.png)  no-repeat center center;
+            width: .14rem;
+            height: .08rem;
+            position: absolute;
+            right: .15rem;
+            top: 50%;
+            display: none;
+            /* margin-top: -0.04rem; */
+        }
+
+        .color-bk-a{
+            background: #F2F2F2;
+            color:#999;
+        }
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+<header class="">
+    <a class="back" href=""></a>
+    <div class="logo">登录</div>
+</header>
+
+<div class="help"></div>
+<form action="../user/userLogin.action"  method="post" >
+    <input type="hidden" name="type" value="${type}">
+    <input type="hidden" name="refereeInfo" value="${userInfo}">
+    <input class="messageError" type="hidden" name="errorMsg" value="${errorMsg}">
+    <section>
+        <div class="input">
+            <input autocomplete="off"  type="text" name="phone" id="user" placeholder="输入手机号">
+            <i class="errx"></i>
+        </div>
+        <div class="input">
+            <input autocomplete="off"  type="password" name="passwd" id="password" class="hidden" placeholder="输入密码">
+            <input autocomplete="off"  type="text" name="passwd" class="show" id="two_password" placeholder="输入密码">
+            <i class="password eye-n"></i>
+            <i class="password eye-s"></i>
+        </div>
+        <div class="p-wp">
+            <p class="log-p">忘记密码</p>
+        </div>
+        <input id="login"  class="login color-bk-a" type="submit"  value="登录"></input>
+        <div class="sign-no"> <span> <a href="../sign_in.html" style="color:#b060d0;">没有账号？立即注册</a></span></div>
+    </section>
+    <div class="message-box">
+        <span></span>
+    </div>
+</form>
+
+
+
+</body>
+</html>
