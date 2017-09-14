@@ -10,11 +10,12 @@
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
-    <!-- <script src="js/jquery.min.js"></script> -->
+    <!--<script src="js/jquery.min.js"></script>-->
     <script src="js/base.js"></script>
     <script src="js/zepto.js"></script>
     <script src="js/touch.js"></script>
     <script src="js/login.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
     <style>
         .show{
             display: none;
@@ -46,7 +47,7 @@
             width:1.5rem;
             height:.5rem;
             font-size: .12rem;
-            text-align: center; 
+            text-align: center;
             background: #999;
             color:#fff;
             display: none;
@@ -79,42 +80,65 @@
         }
 
 
-        
+
+
+
 
     </style>
 
 </head>
-<body>
+<body >
 <header class="">
-    <a class="back" href="#"  onClick="javascript:window.JSBridge.finish()"></a>
+    <a class="back"  href="#" onClick="javascript:window.JSBridge.finish()"></a>
     <div class="logo">登录</div>
 </header>
 
 <div class="help"></div>
-<input class="messageError" type="hidden" name="errorMsg" value="用户名或密码错误!">
 <form action="user/userLogin.action"  method="post" >
     <section>
         <div class="input">
-            <input autocomplete="off" type="text" name="phone" id="user" placeholder="17640464710">
+            <input autocomplete="off" type="text" name="phone" id="user" placeholder="输入手机号">
             <i class="errx"></i>
         </div>
         <div class="input">
-            <input autocomplete="off" type="password" name="passwd" id="password" class="hidden" placeholder="输入密码(3-20位数字和字母的组合)">
-            <input autocomplete="off" type="text" name="passwd" class="show" id="two_password" placeholder="输入密码(3-20位数字和字母的组合)">
+            <input autocomplete="off" type="password" name="passwd" id="password" class="hidden" placeholder="输入密码">
+            <input autocomplete="off" type="text" name="passwd" class="show" id="two_password" placeholder="输入密码">
             <i class="password eye-n"></i>
             <i class="password eye-s"></i>
         </div>
         <div class="p-wp">
             <p class="log-p">忘记密码</p>
         </div>
-        <input id="login" class="login color-bk-a" type="submit" value="登录"></input>
+       <input id="login"  class="login color-bk-a" type="submit"  value="登录"></input>
         <div class="sign-no"> <span> <a href="sign_in.html" style="color:#b060d0;">没有账号？立即注册</a></span></div>
     </section>
     <div class="message-box">
-         <span></span>
+        <span></span>
     </div>
-
 </form>
-</body>
 
+<div id="body">
+    <button @click="res">123456</button>
+</div>
+
+</body>
 </html>
+<script>
+
+      var vue = new Vue({
+        el:'#body',
+        data:{
+            num:0
+        },
+        methods:{
+            res:function(){
+               alert('我是vue的方法')
+            }
+        }
+     })
+
+    console.log( vue.num )  
+    // console.log( vue.res() )  
+    
+    
+</script>

@@ -19,6 +19,7 @@
     border-top: 0 ;
 
   }
+
   footer:before{
     content: "";
     pointer-events: none; 

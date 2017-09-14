@@ -58,6 +58,7 @@ $(function(){
     $("#register").on('click',function(){       
         //  console.log( register.arrRegister[0], register.arrRegister[1], register.arrRegister[2] )
          if ( register.arrRegister[0] && register.arrRegister[1] && register.arrRegister[2] ) {
+             window.location.href = './login.html'
              console.log('success')
          } else {
             var value = $("#password").val();

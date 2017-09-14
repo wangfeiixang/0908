@@ -7,7 +7,7 @@ $(function(){
         memberType:null,
         init:function(){
            // console.log(11)
-            this.acceptData('static/ownStatic.jsp','all',false);
+            this.acceptData('../teamstatic/ownStatic.jsp','all',false);
             this.render();
             this.renderContent();
             this.tab();
@@ -17,8 +17,8 @@ $(function(){
             //所有数据
           var that = this; 
           var deff = $.ajax({
-                type: "get",//post
-                url : url,//"../data/team/我的团队应答.json"//static/ownStatic.jsp
+                type: "post",//post
+                url : url,//"../data/team/我的团队应答.json"//../teamstatic/ownStatic.jsp
                 data: {"action": "ownGroup","type":type},
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json",
@@ -52,7 +52,7 @@ $(function(){
                         +'<p class="member">红钻</p>'
                     +'</li>'
                    +'<li>'
-                        +'<p>'+this.data.prupleNum+'</p>'
+                        +'<p>'+this.data.purpleNum+'</p>'
                         +'<p class="member">紫钻</p>'
                     +'</li>'
                    +'<li>'
@@ -111,10 +111,10 @@ $(function(){
                 // console.log( member )
                 $(this).addClass('active').siblings('li').removeClass("active");
                 switch( member ){
-                    case '会员':that.acceptData('static/ownStatic.jsp','all',true);break;
-                    case '红钻':that.acceptData('static/ownStatic.jsp','red',true);break;
-                    case '紫钻':that.acceptData('static/ownStatic.jsp','prople',true);break;
-                    case '本月':that.acceptData('static/ownStatic.jsp','month',true);break;
+                    case '会员':that.acceptData('../teamstatic/ownStatic.jsp','all',true);break;
+                    case '红钻':that.acceptData('../teamstatic/ownStatic.jsp','red',true);break;
+                    case '紫钻':that.acceptData('../teamstatic/ownStatic.jsp','prople',true);break;
+                    case '本月':that.acceptData('../teamstatic/ownStatic.jsp','month',true);break;
                 }
                 // that.acceptData('all',false);
             })

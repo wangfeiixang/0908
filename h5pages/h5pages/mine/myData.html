@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../css/myData.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/base.js"></script>
-    <script src="../js/myData1.0.js"></script>
+    <script src="../js/myData.js"></script>
     <style>
         html,body,.help2{
             background: #f9f9f9;
@@ -45,7 +45,7 @@
             width:1.5rem;
             height:.5rem;
             font-size: .11rem;
-            text-align: center; 
+            text-align: center;
             background: #999;
             color:#fff;
             display: none;
@@ -71,7 +71,7 @@
 
         .input-phone::-webkit-input-placeholder{
             color: #ccc !important;
-        } 
+        }
 
         .color-f2-a {
             background: #F2F2F2;
@@ -88,33 +88,36 @@
 </head>
 <body>
   <header>
-      <a class="back" onClick="javascript :window.history.back(); return false;"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">我的资料</div>
     </header>
     <div class="help"></div>
     <div class="help2"></div>
-    <div class="phoneMessage" style="display:none;">${nickName}</div>
+    <div class="phoneMessage" style="display:none;">紫石榴4710</div>
 
     <form method="post" action="../user/userEditInfo.action">
-        <div class="input">
-            <span class="sign-code">会员账号</span>
-        <input autocomplete="off" type="text" name="phone"  readonly="readonly" class="input-phone" placeholder="哈哈哈哈">
-        </div>
-        <div class="input">
-            <span class="sign-code">我的昵称</span>
-            <input autocomplete="off" type="text" name="nickName" id="cryptonym"  placeholder="请输入昵称">
-        </div>
-        <div class="input">
-            <span class="sign-code">真实姓名</span>
-            <input autocomplete="off" type="text" name="trueName"  id="readyName" placeholder="请输入姓名">
-        </div>
-        <div class="input delete-border">
-            <span class="sign-code">身份证号</span>
-            <input autocomplete="off" type="text" name="identity"  id="idCard" placeholder="请输入身份账号">
-        </div>
+    <div class="input">
+      <span class="sign-code">会员账号</span>
+      <input autocomplete="off" type="text" name="phone" class="input-phone" readonly="readonly" placeholder="17640464710">
+    </div>
+
+    <div class="input">
+      <span class="sign-code">我的昵称</span>
+      <input autocomplete="off" type="text" name="nickName" id="cryptonym"  placeholder="紫石榴4710">
+    </div>
+    <div class="input">
+      <span class="sign-code">真实姓名</span>
+      <input autocomplete="off" type="text" name="trueName"  id="readyName" placeholder="请输入姓名">
+    </div>
+    <div class="input delete-border">
+      <span class="sign-code">身份证号</span>
+      <input autocomplete="off" type="text" name="identity"  id="idCard" placeholder="请输入身份账号">
+    </div>
+
         <div class="bg-color">
             <input class="login color-f2-a" id="myDatasubmit" type="submit"  value="提交"></input>
         </div>
+
         <div class="message-box">
             <span></span>
         </div>

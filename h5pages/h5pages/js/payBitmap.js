@@ -73,7 +73,7 @@ $("#purple").on('tap',function(){
         pay.paySwitch = true;
         if ( pay.memberPurple ) {
             memberPurple(this)
-            console.log('123')
+            // console.log('123')
         } else {
         // console.log(  '紫钻,失败'  )
             $("#paySubmit").removeClass('payColor')
@@ -127,7 +127,7 @@ function updateMethod(that,str,strNumber){
             break;
         }
 
-        $(".message-box").show().find('span').html(message);
+        // $(".message-box").show().find('span').html(message);
         setTimeout(function(){
             $(".message-box").hide()
         },1000)
@@ -140,8 +140,11 @@ function payType(){
         if ( pay.payAlipay ) {
         // console.log('支付宝')
             $('#payType').val('aliPay');
+            $('.deviceInto').hide()
+            $('.cyc-footer').show()
         } else if( pay.payWeipay ){
-        // console.log('微信')
+        console.log('微信')
+            deviceInto()
             $('#payType').val('wxPay');
         }
 
@@ -149,12 +152,15 @@ function payType(){
 
 //获取当前会员身份红钻或者紫钻,判断用户类型
 function dataType(){
+   // console.log('判断会员')
     var type = $(".message").attr('data-type');
     var upgrade = null;
     switch(type){
-        case 'DIAMOND_RED': upgrade='red'; break;             //红钻
-        case 'DIAMOND_PURPLE': upgrade='purple'; break;       //紫钻
-        default:  upgrade='normal';                           //普通类型
+        case 'DIAMOND_RED': upgrade='red';$('#red').hide();$("#purple").addClass('purpleCenter')
+        break;             //红钻
+        case 'DIAMOND_PURPLE': upgrade='purple'; $("#purple").removeClass('purpleCenter'); 
+        break;       //紫钻
+        default:  upgrade='normal'; $("#purple").removeClass('purpleCenter');                          //普通类型
     }
     return upgrade;
 }
@@ -180,10 +186,8 @@ $("#paySubmit").on('tap',function(){
 
 //判定支付成功与失败
 function alipyType(){
-    // var color = $("#paySubmit").css("backgroundColor");
-    console.log( pay.color,'这是选中状态1111' )
+    // console.log( pay.color,'这是选中状态1111' )
     //不可选中颜色 rgb(160, 155, 155)
-    //console.log( color )
         if ( pay.paySwitch ) {
             if ( pay.color ) {//紫色
                 console.log( '这是选中状态' )
@@ -192,7 +196,7 @@ function alipyType(){
         } 
 }
 
-//重置选项,暂时没有
+//重置选项,暂时没用
 function resertAliay(){
     pay.paySwitch=false;
     pay.payAlipay = true;
@@ -299,6 +303,77 @@ function submitData(){
 
    memberImg()
 
+   //获取用户使用的设备
+   function deviceInto(){
+       var u = navigator.userAgent;
+       console.log('根据用户设备判定');
+    //    alert(u)
+    if ( u.indexOf('Package/com.zshiliu.appstore') == -1 ) {//Package/com.zshiliu.appstore
+        console.log('success');
+        $('.deviceInto').show()
+        $('.cyc-footer').hide()
+        // alert('success')
+    } else {
+        console.log('error');
+        $('.deviceInto').hide()
+        $('.cyc-footer').show()
+        // alert('error')
+    }
+    // console.log( u )
+   }
 
+   //判断是微信内还是非微信
+
+   function deviceWeixin(){
+        var u = navigator.userAgent;
+        if ( u.indexOf('MicroMessenger') > -1 ) {//在微信中
+            // alert('在微信中');
+            $('.deviceInto').show()
+            $('.aliPay').hide()
+            $('.cyc-footer').hide()
+        } else {//没在微信中
+            // alert('没有在微信中');
+            $('.deviceInto').hide()
+            $('.aliPay').show()
+            $('.cyc-footer').show()
+        }
+   }
+
+   setTimeout(function(){
+       if ( pay.payAlipay ) {
+         deviceWeixin()
+       } 
+
+      /*  var u = navigator.userAgent;
+       if ( u.indexOf('Android') > -1 ) {//在非微信中
+           // alert('复制');
+          $("#copyInput").show()
+          if( u.indexOf('MicroMessenger')>-1 ){
+            $("#copyInput").hide()
+          }
+
+            if( u.indexOf('Package/com.zshiliu.appstore')>-1 ){
+                $("#copyInput").hide()
+            }
+       } */
+
+   },0)
+
+
+   $("#copyInput").on('tap',function(){
+        // alert('复制');
+        window.location.href="http://f.appstore.zshiliu.com/zslapp/appstore-release-v1.0_31001.apk";
+   })
+   
   
+
+
+
+   
+
+   
+   
+
+
+//    Mozilla/5.0 (Linux; Android 7.0; SM-G9350 Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/56.0.2924.87 Mobile Safari/537.36 Package/com.zshiliu.appstore VersionName/1.1 VersionCode/2com.zshiliu.appstore
  

@@ -1,7 +1,8 @@
 {
-  "operationLevel": "一级",
-  "getCash":"-99",
+  "operationLevel": "二级",
+  "getCash":"-9",
   "bankCardBingdingStatus":"Y",
   "nDay":"3天",
+  "cycleIncome":"22",
   "signature":"Y"
 }

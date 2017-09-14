@@ -7,8 +7,8 @@ $(function(){
     // console.log(1)
     //自执行数据请求
     var deff = $.ajax({
-        type: "post",//post
-        url : "../operation/userOperation.jsp",//operation/userOperation.jsp//../data/community/001-首页应答.json
+        type: "GET",//post
+        url : "../data/community/001-首页应答.json",//../operation/userOperation.jsp//../data/community/001-首页应答.json
         data: {"action":"communityFrontPage"},
         contentType:"application/x-www-form-urlencoded;charset=utf-8",
         dataType: "json",

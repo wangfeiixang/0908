@@ -7,12 +7,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Ratchet">
     <title>余额明细</title>
-    <link rel="stylesheet" type="text/css" href="../../css/base.css">
-    <link rel="stylesheet" type="text/css" href="../../css/member.css">
-    <link rel="stylesheet" type="text/css" href="../../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../css/balance.css">
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/base.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/member.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/balance.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/base.js"></script>
 
     <style>
         .span_1{
@@ -23,7 +23,7 @@
 </head>
 <body>
    <header>
-      <a class="back"  href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">余额明细</div>
     </header>
     <div class="help"></div>

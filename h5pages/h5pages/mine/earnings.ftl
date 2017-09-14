@@ -25,8 +25,10 @@
             width: 100%;
         }
         .profit-div1 .profit-span2{
-            color:black;
-            font-style: 900;
+            color: #fa6062;
+            vertical-align: bottom;
+            display: inline-block;
+            font-size: .18rem;
         }
 
         .profit-span4 .num{
@@ -44,7 +46,7 @@
         }
 
         .span-border{
-            border-right: 0.5px solid #333;
+            border-right:1px solid #e6e6e6;
         }
         .profit-span4 p:first-child{
             margin-bottom: 10px;
@@ -52,6 +54,32 @@
 
         .earning-wp{
             box-shadow: 0px 5px 10px #e6e6e6 !important;
+        }
+
+        .border-div{
+            border-bottom:1px solid #e6e6e6;
+        }
+
+        .profit-div2 .intro{
+            color:#535353;
+            font-size: .12rem;
+            font-weight: 600 ;
+        }
+
+        .profit-div2 .num{
+            color: #999999;
+            font-family: PingFangSC-Light;
+            font-size: .12rem;
+        }
+
+        .profit-span4 {
+            display:inline-block;
+            height: 100%;
+            margin-top: 0rem;
+        }
+
+        section{
+            margin: 0rem .45rem 0 .45rem;
         }
 
 
@@ -71,7 +99,7 @@
           <div class="balance">账户收益</div>
           <h1>${cashIncome.current?if_exists}</h1>
           <p class="tixian"><span><a href="../user/reqCashing.action">收益提现</a></span></p>
-          <p class="mingxi"><span><a href="user/incomeDetail.action">账户明细</a></span></p>
+          <p class="mingxi"><span><a href="../user/incomeDetail.action">账户明细</a></span></p>
       </div>
     </section>
     <div class="earning-wp">
@@ -88,8 +116,8 @@
           <p class="intro">冻结收益</p>
         </span>
     </div>
-    <div class="h-10-colo"></div>
-    <div class="profit">
+    <div class="h-10-colo "></div>
+    <div class="profit border-div">
       <div class="profit-div1">
           <span class="profit-span1">分红点：<span class="profit-span2">${scoreIncome.current?if_exists}</span></span>
         <#--<span class="profit-span3"><a href="../user/scoreDetail.action">查看明细</a></span>-->
@@ -98,12 +126,13 @@
         <span class="profit-span4 span-border">
            <#--<p class="num">${scoreIncome.total?if_exists}</p>-->
           <#--<p class="intro">本月分红点</p>-->
+               <p class="intro">${scoreIncome.scoreMoney?if_exists}元</p>
                <p class="num">当前分红点价值</p>
-           <p class="intro">${scoreIncome.total?if_exists}元</p>
+
         </span>
         <span class="profit-span4">
+            <p class="intro">${diff_Day}天后</p>
             <p class="num">下次分红结算</p>
-          <p class="intro">18天后</p>
            <#--<p class="num">${scoreIncome.total?if_exists}</p>-->
           <#--<p class="intro">累计分红点</p>-->
         </span>

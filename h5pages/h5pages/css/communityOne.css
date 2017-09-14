@@ -132,9 +132,25 @@ body,html{
     margin-top: .25rem;
     font-size: .14rem ;
 }
+.subsidy p{
+    color:#979393;
+}
+
 .subsidy p span{
+    display: inline-block;
+}
+
+.subsidy p b{
+    display: inline-block;
+  font-weight: normal;
+  margin: 0 3px;
+  vertical-align: bottom;
+}
+
+.subsidy p span.allowance{
     color: #FF7832;
 }
+
 .subsidy p i{
     font-style: normal;
     color:#979393;

@@ -4,11 +4,12 @@ $(function(){
 
     var extend = {
         data:null,
+        num:0,
         strPhone:/^\d{11}$/,
         memberType:null,
         init:function(){
            // console.log(11)
-            this.acceptData('../data/team/我的推广应答.json','NAMAL',false);
+            this.acceptData('../teamstatic/ownStatic.jsp','NOMAL',false);
             this.render();
             this.renderContent();
             this.tab();
@@ -20,8 +21,8 @@ $(function(){
             //所有数据
           var that = this; 
           var deff = $.ajax({
-                type: "get",//post
-                url : url,//"../data/team/我的推广应答.json"//static/ownStatic.jsp
+                type: "post",//post
+                url : url,//"../data/team/我的推广应答.json"//teamstatic/ownStatic.jsp
                 data: {"action": "ownExtension","type":type},
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json",
@@ -33,6 +34,7 @@ $(function(){
                 that.data = res;
                 if ( boolean==true ) {
                     that.renderContent();
+                    that.render();
                 } 
               //  console.log( 'success',that.data )
 
@@ -59,7 +61,8 @@ $(function(){
                         +'<p class="member">直推钻石专员</p>'
                     +'</li>';
             // console.log(html)
-            $(".content ul").html(html)
+            $(".content ul").html(html);
+            $( $(".content ul li")[this.num] ).addClass('active').siblings('li').removeClass('active');
         },
         renderContent:function(){//正式会员内容
             $('.message').show();
@@ -116,7 +119,6 @@ $(function(){
             $('.message').html(str)
         },
         tab:function(){//选项卡
-           
             var that = this;
             $(".content ul").on('tap',"li",function(){
                 // console.log('tap',this)
@@ -130,8 +132,8 @@ $(function(){
                 var value = $('#search').val()
                 // console.log( '搜索',value )
                 if ( that.strPhone.test(value) ) {
-                    console.log( '搜索成功' )
-                    that.acceptData('../data/team/我的推广应答2.json','SERACH:'+value,true);
+                    // console.log( '搜索成功' )
+                    that.acceptData('../teamstatic/ownStatic.jsp','SERACH:'+value,true);
                     $('.confirm').hide();
                     $('.message').show();
                 } else {
@@ -144,12 +146,13 @@ $(function(){
         commonFunction:function(_this){
             var that = this;
             var member = $(_this).find('p.member').html()
-            console.log( member )
+            that.num = $(this).index();
+            // console.log( member )
             $(_this).addClass('active').siblings('li').removeClass("active");
             switch( member ){
-                case '普通会员':that.acceptData('../data/team/我的推广应答.json','NAMAL',true);break;
-                case '直推推广专员':that.acceptData('../data/team/我的推广应答1.json','PROFESSIONAL',true);break;
-                case '直推钻石专员':that.acceptData('../data/team/我的推广应答2.json','DIAMOND',true);break;
+                case '普通会员':that.acceptData('../teamstatic/ownStatic.jsp','NOMAL',true);break;
+                case '直推推广专员':that.acceptData('../teamstatic/ownStatic.jsp','PROFESSIONAL',true);break;
+                case '直推钻石专员':that.acceptData('../teamstatic/ownStatic.jsp','DIAMOND',true);break;
             }
             
         },
@@ -157,7 +160,8 @@ $(function(){
             var that = this;
             $(".content ul").on('swipeleft','li',function(){
                 //alert( $(this).index() )
-                console.log(this)
+                that.num = $(this).index();
+                // console.log(this)
                 that.commonFunction(this);
             })
         }

@@ -22,12 +22,16 @@ var communityOne = {
     render:function(){//重新获取提现金额
         this.data = this.dataObj();
         // console.log(this.data)
-        $('.content-one span').html(this.data.getCash)
+        $('.content-one span').html(this.data.getCash);
+        $('.subsidy p b').html(this.data.cycleIncome);
+        $('.subsidy-message').html(this.data.getCash)
+        //  alert( this.data.getCash )
+        console.log( this.data,$('.subsidy-message') )
     },
     _data:function(){
         this.data = this.dataObj();
        // console.log(this.data.nDay)
-        $('.subsidy span').html(this.data.nDay)
+        $('.subsidy .allowance').html(this.data.nDay)
     },
     _submit:function(){//申请提现余额
         
@@ -73,6 +77,7 @@ var communityOne = {
             // console.log(111,'确认')
             $('.mask').hide();
             $('.confirm').hide();
+            // localStorage.removeItem('message');
             
         })
     },
@@ -81,7 +86,7 @@ var communityOne = {
         var that =this;
         var deff = $.ajax({
             type: "post",//post
-            url : "../operation/userOperation.jsp",//提现地址operation/userOperation.jsp//../data/community/002-提现申请应答.json
+            url : "../data/community/002-提现申请应答.json",//../operation/userOperation.jsp//../data/community/002-提现申请应答.json
             data: {"action":"getCash"},
             contentType:"application/x-www-form-urlencoded;charset=utf-8",
             dataType: "json"

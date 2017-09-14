@@ -92,9 +92,7 @@ $(function(){
             } else {
                 login.arrLogin[0] = false;
             }
-
             eventKeyup()
-            
         })
 
 

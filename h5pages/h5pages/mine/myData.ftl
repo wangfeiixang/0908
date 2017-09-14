@@ -25,74 +25,103 @@
         }
 
         .bg-color{
-            overflow: hidden;
             background: #f9f9f9;
+            text-align: center;
         }
 
         .delete-border{
             border:none;
         }
 
-        .confirm-box{
+        .message-box{
+            z-index: 999;
             position: absolute;
-            cursor: pointer;
-            left: 90px;
-            top: 489px;
-            width: 180px;
-            height: 50px;
-            opacity: 0.5;
-            background: #000000;
-            border-radius: 8px;
+            border-radius: 5px;
+            left:0;
+            right:0;
+            top:2.8rem;
+            bottom:0;
+            margin: auto;
+            width:1.5rem;
+            height:.5rem;
+            font-size: .11rem;
+            text-align: center;
+            background: #999;
             color:#fff;
             display: none;
-            line-height: 50px;
-            text-align: center;
-            font-family: HelveticaNeue,Helvetica,Arial,sans-serif;
-            font-size: 12px;
+        }
+
+        .message-box span{
+            display: block;
+            width:1.5rem;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
         }
 
         #idCard,#cryptonym,#readyName{
             width:80%;
         }
 
+        ::-webkit-input-placeholder{
+            color: #666 !important;
+        }
 
+        .input-phone::-webkit-input-placeholder{
+            color: #ccc !important;
+        }
+
+        .color-f2-a {
+            background: #F2F2F2;
+            color:black;
+        }
+
+        .color-bk-a{
+            background: #CA88ED;
+            color: #fff;
+        }
 
 
     </style>
 </head>
 <body>
   <header>
-      <a class="back" href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">我的资料</div>
     </header>
     <div class="help"></div>
     <div class="help2"></div>
+    <div class="phoneMessage" style="display:none;">${nickName}</div>
 
     <form method="post" action="../user/userEditInfo.action">
     <div class="input">
       <span class="sign-code">会员账号</span>
-      <input type="text" name="phone"  readonly="readonly" placeholder="${phone ? default("请输入账号")}">
+      <input autocomplete="off" type="text" name="phone" class="input-phone" readonly="readonly" placeholder="${phone ? default("请输入账号")}">
     </div>
 
 
     <div class="input">
       <span class="sign-code">我的昵称</span>
-      <input type="text" name="nickName" id="cryptonym"  placeholder="${nickName ? default("请输入昵称")}">
+      <input autocomplete="off" type="text" name="nickName" id="cryptonym"  placeholder="${nickName ? default("请输入昵称")}">
     </div>
     <div class="input">
       <span class="sign-code">真实姓名</span>
-      <input type="text" name="trueName"  id="readyName" placeholder="${trueName ? default("请输入姓名")}">
+      <input autocomplete="off" type="text" name="trueName"  id="readyName" placeholder="${trueName ? default("请输入姓名")}">
     </div>
     <div class="input delete-border">
       <span class="sign-code">身份证号</span>
-      <input type="text" name="identity"  id="idCard" placeholder="${identity ? default("请输入身份账号")}">
+      <input autocomplete="off" type="text" name="identity"  id="idCard" placeholder="${identity ? default("请输入身份账号")}">
     </div>
 
         <div class="bg-color">
-            <div class="login color-f2-a"><input id="myDatasubmit" type="submit" style="background-color:rgba(0, 0, 0, 0);color:#fff;" value="提交"></input></div>
+            <input class="login color-f2-a" id="myDatasubmit" type="submit"  value="提交"></input>
         </div>
 
-        <div class="confirm-box"></div>
+        <div class="message-box">
+            <span></span>
+        </div>
     </form>
 </body>
 </html>

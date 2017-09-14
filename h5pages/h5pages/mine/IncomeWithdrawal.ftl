@@ -12,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/IncomeWithdrawal.css">
     <script src="../js/jquery.min.js"></script>
+
+    <!-- <script src="../js/zepto.js"></script> -->
+    <!-- <script src="../js/touch.js"></script> -->
     <script src="../js/base.js"></script>
     <script src="../js/benefits.js"></script>
     <style>
@@ -23,32 +26,57 @@
             position: absolute;
             cursor: pointer;
             left: 0;
-            top: 300px;
+            top: 3rem;
             right:0;
             bottom: 0;
             margin: auto;
-            width: 180px;
-            height: 50px;
-            opacity: 0.6;
-            background: #000000;
+            width: 1.8rem;
+            height: .5rem;
+            background: #999;
             border-radius: 8px;
             color:#fff;
             display: none;
-            line-height: 50px;
+            line-height: .5rem;
             text-align: center;
             font-family: HelveticaNeue,Helvetica,Arial,sans-serif;
-            font-size: 12px;
+            font-size: .12rem;
         }
 
         .sum input{
             width:82% !important;
         }
 
+        input[type=number]::-webkit-inner-spin-button,
+
+        input[type=number]::-webkit-outer-spin-button {
+
+            -webkit-appearance: none;
+
+            margin: 0;
+
+        }
+
+        .login {
+            background: #F2F2F2;
+        }
+
+        .place{
+            width:100%;
+        }
+
+        input::-webkit-input-placeholder{
+            color: #ccc;
+            font-size: 0.3rem;
+            padding: 0.02rem;
+        }
+
+
+
     </style>
 </head>
 <body>
  <header>
-      <a class="back"  href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">收益提现</div>
     </header>
     <div class="help"></div>
@@ -74,8 +102,8 @@
     </div>
 
  <div class="sum">
-     <span>￥</span><input name="cashNum" type="number"  id="max_limit">
-     <span class="place">输入要提现的额度</span>
+     <span>￥</span><input name="cashNum" type="number"  id="max_limit" placeholder="输入要提现的额度">
+     <#--<span class="place">输入要提现的额度</span>-->
  </div>
 
  <div class="login color-f2-a submit_apply">提交提现申请</div>

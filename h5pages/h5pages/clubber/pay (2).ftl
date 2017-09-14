@@ -19,7 +19,6 @@
     <script src="../js/base.js"></script>
     <script src="../js/base64.js"></script>
 
-
     <style>
         .message-box{
             z-index: 999;
@@ -105,6 +104,48 @@
             top: .01rem;
 
         }
+        .purpleCenter{
+            margin-left:28%;
+            z-index: 999;
+        }
+
+        .cyc-footer{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .deviceInto{
+            position: absolute;
+            left: 0;
+            bottom:0rem;
+            z-index: 999;
+            font-size: .16rem;
+            background: #fff;
+            display: none;
+        }
+
+        .deviceInto .devicePay{
+            width:100%;
+            height: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .devicePay p{
+            text-align: center;
+        }
+
+
+        #copyInput{
+            outline: none;
+            border:none;
+            background: #9666C4;
+            color:#fff;
+            font-size: .16rem;
+            vertical-align: 0;
+            display: none;
+        }
 
     </style>
 </head>
@@ -132,7 +173,7 @@
         <img src="../img/member/btn_red_n.png" alt="">
         <i class="redbg"></i>
       </div>
-      <div class="pay-diamond purple" id="purple"  data-type="DIAMOND_PURPLE" data-price="${purplePrice}">
+      <div class="pay-diamond purple purpleCenter" id="purple"  data-type="DIAMOND_PURPLE" data-price="${purplePrice}">
         <img src="../img/member/btn_purple_n.png" alt="">
         <i class="purple"></i>
       </div>
@@ -170,6 +211,14 @@
         <!--<input type="hidden" name="payType" id="payType" value="aliPay"></input>-->
         <input type="submit" id="paySubmit"  value="去支付"></input>
         <!-- </form> -->
+    </div>
+    <div class="deviceInto">
+        <div class="devicePay">
+            <p>1. 请复制应用商店下载地址: f.appstore.zshiliu.com/zslapp/release.apk
+            </p>
+            <p>2. 将复制的地址粘贴到浏览器地址栏，开始下载应用商店并安装<button id="copyInput">下载按钮</button></p>
+        </div>
+
     </div>
 </footer>
 <div class="message-box">

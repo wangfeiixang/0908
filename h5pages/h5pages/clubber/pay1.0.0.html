@@ -105,6 +105,48 @@
             top: .01rem;
 
         }
+        .purpleCenter{
+            margin-left:28%;
+            z-index: 999;
+        }
+
+        .cyc-footer{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .deviceInto{
+            position: absolute;
+            left: 0;
+            bottom:0rem;
+            z-index: 999;
+            font-size: .16rem;
+            background: #fff;
+            display: none;
+        }
+
+        .deviceInto .devicePay{
+            width:100%;
+            height: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .devicePay p{
+            text-align: center;
+        }
+
+
+        #copyInput{
+            outline: none;
+            border:none;
+            background: #9666C4;
+            color:#fff;
+            font-size: .16rem;
+            vertical-align: 0;
+            display: none;
+        }
 
     </style>
 </head>
@@ -117,20 +159,20 @@
     <div class="help"></div>
     <section style="margin-top: 25px">
         <!--用户当前的会员类型-->
-            <div class="message" style="display:none"  data-type="${userClubberType}"></div>
+            <div class="message" style="display:none"  data-type="DIAMOND_RED" ></div>
       <div style="position: relative;">
         <div class="member-img">
-          <img src="../img/member/Group5.png" alt="">
+          <img src="../img/member/Group5.png" >
         </div>
         <div class="member-men">${userNickName}  <img class="memberRed" src="../img/min/Bitmap.png" ></div>
       </div>
     </section>
-    <div class="pay-div">
+    <div class="pay-div" >
       <div class="pay-diamond redbg" id="red" data-type="DIAMOND_RED" data-price="${redPrice}">
         <img src="../img/member/btn_red_n.png" alt="">
         <i class="redbg"></i>
       </div>
-      <div class="pay-diamond purple" id="purple"  data-type="DIAMOND_PURPLE" data-price="${purplePrice}">
+      <div class="pay-diamond purple purpleCenter" id="purple"  data-type="DIAMOND_PURPLE" data-price="${purplePrice}">
         <img src="../img/member/btn_purple_n.png" alt="">
         <i class="purple"></i>
       </div>
@@ -153,7 +195,6 @@
 </div>
 <div class="bg-f6"></div>
 
-
 <footer class="pay">
     <div class="cyc-footer">
         <div class="cyc-pay-w">
@@ -163,7 +204,16 @@
         <input type="hidden" name="payType" id="payType" value="aliPay"></input>
         <input type="submit" id="paySubmit"  value="去支付"></input>
     </div>
+    <div class="deviceInto">
+        <div class="devicePay">
+            <p>长按www.zshiliu.com,选择复制在浏览器打开
+                <button id="copyInput">下载按钮</button>
+            </p>
+        </div>
+        
+    </div>
 </footer>
+
 <div class="message-box">
     <span></span>
 </div>
@@ -172,6 +222,8 @@
     <img src="../img/member/loading.gif" alt="" srcset="">
 </div>
 <div class="form"></div>
-</body>
+
 <script src="../js/payBitmap.js"></script>
+</body>
+
 </html>

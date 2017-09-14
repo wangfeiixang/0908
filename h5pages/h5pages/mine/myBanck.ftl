@@ -14,11 +14,26 @@
     <link rel="stylesheet" type="text/css" href="../css/myBanck.css">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/base.js"></script>
-    
+    <style>
+        .changBank{
+            color:#fff;
+            width: 100%;
+            display: block;
+        }
+        .show-bg{
+            height: 0.9rem;
+        }
+
+        .mycard{
+            background: url(../img/min/card_bankBlue.png) no-repeat;
+            background-size: 100%;
+        }
+
+    </style>
 </head>
 <body>
   <header>
-      <a class="back"  href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">我的银行卡</div>
     </header>
     <div class="help"></div>
@@ -27,7 +42,7 @@
       <p>${cardNo}</p>
     </div>
     <div class="show-bg"></div>
-    <div class="login color-f2-a"><a href="../user/changeCard.action">更换银行卡</a></div>
+    <div class="login color-f2-a"><a href="../user/changeCard.action" class="changBank">更换银行卡</a></div>
 
 </body>
 </html>

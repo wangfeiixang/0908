@@ -10,8 +10,10 @@
     <link rel="stylesheet" type="text/css" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <script src="../js/jquery.min.js"></script>
+    <#--<script src="../js/jquery.min.js"></script>-->
     <script src="../js/base.js"></script>
+    <script src="../js/zepto.js"></script>
+    <script src="../js/touch.js"></script>
     <script src="../js/login.js"></script>
     <style>
         .show{
@@ -32,38 +34,54 @@
             display: none;
         }
 
-        .confirm-box{
+        .message-box{
+            z-index: 999;
             position: absolute;
-            cursor: pointer;
-            left: 0;
+            border-radius: 5px;
+            left:0;
             right:0;
+            top:3rem;
             bottom:0;
-            top: 300px;
             margin: auto;
-            width: 180px;
-            height: 50px;
-            opacity: 0.5;
-            background: #000000;
-            border-radius: 8px;
-            color:#fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width:1.5rem;
+            height:.5rem;
+            font-size: .12rem;
             text-align: center;
-            font-family: HelveticaNeue,Helvetica,Arial,sans-serif;
-            font-size: 12px;
+            background: #999;
+            color:#fff;
+            display: none;
         }
 
-        i.err{
+        .message-box span{
+            width:1.5rem;
+            height:.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+
+        i.errx{
             display: inline-block;
             background: url(../img/login/CombinedShape.png)  no-repeat center center;
-            width: 14px;
-            height: 8px;
+            width: .14rem;
+            height: .08rem;
             position: absolute;
-            right: 15px;
+            right: .15rem;
             top: 50%;
-            margin-top: -4px;
+            display: none;
+            /* margin-top: -0.04rem; */
         }
+
+        .color-bk-a{
+            background: #F2F2F2;
+            color:#999;
+        }
+
+
+
+
+
 
     </style>
 
@@ -78,25 +96,29 @@
 <form action="../user/userLogin.action"  method="post" >
     <input type="hidden" name="type" value="${type}">
     <input type="hidden" name="refereeInfo" value="${userInfo}">
+    <input class="messageError" type="hidden" name="errorMsg" value="${errorMsg}">
     <section>
         <div class="input">
-            <input type="text" name="phone" id="user" placeholder="输入手机号">
-            <i class="err"></i>
+            <input autocomplete="off"  type="text" name="phone" id="user" placeholder="输入手机号">
+            <i class="errx"></i>
         </div>
         <div class="input">
-            <input type="password" name="passwd" id="password" class="hidden" placeholder="输入密码">
-            <input type="text" name="passwd" class="show" id="two_password" placeholder="输入密码">
+            <input autocomplete="off"  type="password" name="passwd" id="password" class="hidden" placeholder="输入密码">
+            <input autocomplete="off"  type="text" name="passwd" class="show" id="two_password" placeholder="输入密码">
             <i class="password eye-n"></i>
             <i class="password eye-s"></i>
         </div>
         <div class="p-wp">
             <p class="log-p">忘记密码</p>
         </div>
-        <div class="login color-f2-a"><input id="login"  type="submit" style="background-color:rgba(0, 0, 0, 0);color:#fff;" value="提交"></input></div>
-        <div class="sign-no"> <span> <a href="../sign_in.html">没有账号？立即注册</a></span></div>
+        <input id="login"  class="login color-bk-a" type="submit"  value="登录"></input>
+        <div class="sign-no"> <span> <a href="../sign_in.html" style="color:#b060d0;">没有账号？立即注册</a></span></div>
     </section>
+    <div class="message-box">
+        <span></span>
+    </div>
 </form>
-<div class="confirm-box"></div>
+
 
 
 </body>

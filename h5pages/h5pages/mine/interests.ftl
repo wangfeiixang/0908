@@ -17,7 +17,7 @@
 </head>
 <body>
    <header>
-      <a class="back"  href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">会员权益</div>
     </header>
     <div class="help"></div>
