@@ -54,18 +54,6 @@ $(function(){
 
     }
 
-   /*  //获取焦点事件
-
-    $("#user").focus(function(){
-        $('.message-box').hide();
-        //$(this).val('')
-    })
-
-    $("#password").focus(function(){
-        $('.message-box').hide();
-        //$(this).val('')
-    }) */
-
     //延迟一秒消息框消失
     function delay(){
         setTimeout(function(){
@@ -221,6 +209,36 @@ $(function(){
          function loginClose(){
             $("#register").addClass('color-bk-a').removeClass('color-f2-a')
         }
+
+        function getUserDate(){
+            var date = new Date().getTime();
+            var date1 = date+30*60*1000;
+            var hours = new Date(date1).getHours();
+            var minutes = new Date(date1).getMinutes();
+            var seconds = new Date(date1).getSeconds();
+            if ( hours<10 ) {
+                hours = '0'+hours
+            }
+            
+            if ( minutes<10 ) {
+                minutes = '0'+minutes
+            }
+    
+            if ( seconds<10 ) {
+                seconds = '0'+seconds
+            }
+    
+            var fullTime = hours+":"+minutes
+    
+            // minutes = new Date( minutes+ ) 
+    
+            $(".dataTime span").html(fullTime);
+    
+           // console.log( hours,minutes,seconds,fullTime )
+          }
+         
+          getUserDate()
+    
     
     
 })

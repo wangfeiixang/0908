@@ -6,6 +6,9 @@ $(function(){
             arrLogin:[false,false],
             // strPassword:/^[a-zA-z0-9]{3,20}$/,
             strPassword:/^(?!\D+$)(?![^a-zA-Z]+$)\S{3,20}$/,
+            hours:null,
+            minutes:null,
+            seconds:null,
             achePassword:null
         }
     
@@ -92,7 +95,9 @@ $(function(){
             } else {
                 login.arrLogin[0] = false;
             }
+
             eventKeyup()
+            
         })
 
 
@@ -241,6 +246,50 @@ $(function(){
           $("#login").addClass('color-bk-a').removeClass('color-f2-a')
       }
 
+      //关闭跳转注册页面入口
+      function closeRegistor(){
+            var u = navigator.userAgent;
+            if ( u.indexOf('Package/com.zshiliu.appstore') > -1 ) {//在紫石榴app中 //Package/com.zshiliu.appstore
+                $(".sign-no").hide()
+            }else{
+                $(".sign-no").show()
+            }
+      }
+      closeRegistor();
+
+      //当前时间
+
+      function getUserDate(){
+        var date = new Date().getTime();
+        var date1 = date+30*60*1000;
+        var hours = new Date(date1).getHours();
+        var minutes = new Date(date1).getMinutes();
+        var seconds = new Date(date1).getSeconds();
+        if ( hours<10 ) {
+            hours = '0'+hours
+        }
+        
+        if ( minutes<10 ) {
+            minutes = '0'+minutes
+        }
+
+        if ( seconds<10 ) {
+            seconds = '0'+seconds
+        }
+
+        var fullTime = hours+":"+minutes
+
+        // minutes = new Date( minutes+ ) 
+
+        $(".dataTime span").html(fullTime);
+
+       // console.log( hours,minutes,seconds,fullTime )
+      }
+     
+      getUserDate()
+
        
+      
+      
         
     })
