@@ -15,7 +15,6 @@
     <script src="js/zepto.js"></script>
     <script src="js/touch.js"></script>
     <script src="js/login.js"></script>
-    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
     <style>
         .show{
             display: none;
@@ -79,6 +78,19 @@
             color:#999;
         }
 
+        .prompt{
+            margin-top: .15rem;
+            font-size: .14rem;
+        }
+
+        .sign-no{
+            margin-top: .15rem;
+        }
+
+        .dataTime span{
+            vertical-align: 0;
+        }
+
 
 
 
@@ -87,7 +99,7 @@
     </style>
 
 </head>
-<body >
+<body>
 <header class="">
     <a class="back"  href="#" onClick="javascript:window.JSBridge.finish()"></a>
     <div class="logo">登录</div>
@@ -111,34 +123,17 @@
         </div>
        <input id="login"  class="login color-bk-a" type="submit"  value="登录"></input>
         <div class="sign-no"> <span> <a href="sign_in.html" style="color:#b060d0;">没有账号？立即注册</a></span></div>
+        <div class="prompt">
+               <p>请在30分钟内完成注册及会员充值，若未完成充值，此次注册无效，请重新注册！</p> 
+               <p class="dataTime">本次注册将在<span></span>失效</p> 
+        </div> 
     </section>
     <div class="message-box">
         <span></span>
     </div>
 </form>
 
-<div id="body">
-    <button @click="res">123456</button>
-</div>
+
 
 </body>
 </html>
-<script>
-
-      var vue = new Vue({
-        el:'#body',
-        data:{
-            num:0
-        },
-        methods:{
-            res:function(){
-               alert('我是vue的方法')
-            }
-        }
-     })
-
-    console.log( vue.num )  
-    // console.log( vue.res() )  
-    
-    
-</script>

@@ -92,13 +92,23 @@
         }
 
         .sign-no{
-            margin-top: .2rem;
+            margin-top: .15rem;
         }
 
         .color-bk-a{
             background: #F2F2F2;
             color:#999;
         }
+
+        .prompt{
+            margin-top: .15rem;
+            font-size: .14rem;
+        }
+
+        .dataTime span{
+            vertical-align: 0;
+        }
+
 
     </style>
 
@@ -114,6 +124,7 @@
     <form action="user/userReg.action"  method="post">
         <section>
             <div class="input">
+                <input type="hidden" name="type" value="REG">
                 <input autocomplete="off" type="text" name="phone" id="user" placeholder="输入手机号">
                 <i class="err"></i>
             </div>
@@ -135,6 +146,10 @@
             </lable>
            <input class="login color-bk-a" id="register" type="submit"  value="注册"></input>
             <div class="sign-no"> <span> <a href="login.html" style="color:#b060d0;">已有账号？去登录</a></span></div>
+            <div class="prompt">
+                <p>请在30分钟内完成注册及会员充值，若未完成充值，此次注册无效，请重新注册！</p> 
+                <p class="dataTime">本次注册将在<span></span>失效</p> 
+         </div> 
         </section>
     </form>
     <div class="message-box">
