@@ -9,6 +9,7 @@ $(function(){
             hours:null,
             minutes:null,
             seconds:null,
+            href:window.location.href,
             achePassword:null
         }
     
@@ -194,10 +195,17 @@ $(function(){
                 }
            
         }) 
+
         
         //忘记密码，跳转lost-password.html
         $(".log-p").on('tap', function(){
-            window.location.href = "./lost-password.html"
+            
+            if (  login.href.indexOf('user')>-1 ) {
+                window.location.href = '../lost-password.html'
+            } else {
+                window.location.href = './lost-password.html'
+            }
+            //window.location.href = "./lost-password.html"
         } )
     
         //点击×清除号码
@@ -288,7 +296,9 @@ $(function(){
      
       getUserDate()
 
-       
+       //跳转忘记密码页面
+
+
       
       
         

@@ -7,9 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-
     <div id="app"></div>
-    
 </body>
-<script src="greeter.js"></script>
+<!-- <script src="greeter.js"></script> -->
+<script>
+    var adder = {
+        base : 1,
+        add : function(a) {
+            var f = v => v + this.base;
+            // console.log(v)
+            return f(a);
+        },
+
+        addThruCall : function(a) {
+            var f = v => v + this.base;
+            var b = {
+                base : 2
+            };
+            return f.call(b, a);
+        }
+    };
+
+    // console.log(adder.add(1));         // 输出 2
+    // console.log(adder.addThruCall(1)); // 仍然输出 2
+
+  /*var getFunction = ( id,name ) => ({ id: id,name:name });  
+
+    console.log( getFunction('22','张三') ) */
+    
+    
+    
+</script>
 </html>

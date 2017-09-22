@@ -1,0 +1,5 @@
+// user/userGetCash.jsp
+{
+  "action": "userGetCash",
+  "getCashNum": "提现金额"
+}

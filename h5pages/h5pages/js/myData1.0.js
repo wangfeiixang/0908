@@ -4,7 +4,7 @@ $(function(){
     var data = {
       strCryptonym:/^[\u4e00-\u9fa5\d\a-zA-Z]{1,20}$/,
       strReadyNam:/^[\u4e00-\u9fa5]{2,10}$/,
-      strIdcard:/^[\d\A-Za-z]{18}$/,
+    //   strIdcard:/^[\d\A-Za-z]{18}$/,
       phoneSwitch:false,
       tip:null,
       arrData:[false,false,false],
@@ -39,15 +39,35 @@ $(function(){
         // console.log( '验证用户名', data.arrData[0] )
     })
 
+
+    function cryptonym(_this){
+        var strName = $(_this).val();
+        if ( data.strCryptonym.test(strName) ) {
+            // data.test('昵称输入正确')
+             data.arrData[0] = true;
+             data.phoneSwitch = true;
+             judgeColor()
+ 
+         } else {
+             judgeCloseColor()
+            //  data.test('请最少输入1位以上昵称')
+             data.arrData[0] = false;
+             data.phoneSwitch = false;
+            //  delay()
+         }
+        
+    }
+
     //真实姓名验证
     $('#readyName').blur(function(){
+        // readName(this)
         var strName = $(this).val()
         if ( data.strReadyNam.test(strName) ) {
             //data.test('姓名输入正确')
             data.arrData[1] = true;
-            judgeColor()
+                // judgeColor()
         } else {
-            judgeCloseColor()
+            // judgeCloseColor()
             data.test('请重新输入姓名')
             data.arrData[1] = false;
             $(this).val('')
@@ -55,19 +75,34 @@ $(function(){
         }
     })
 
-    //身份证号验证
 
+
+    function readName(_this){
+        var strName = $(_this).val()
+        // console.log( strName.length )
+        if ( data.strReadyNam.test(strName) ) {
+            data.arrData[1] = true;
+            judgeColor()
+        } else {
+            judgeCloseColor()
+            // data.test('请重新输入姓名')
+            // delay()
+            data.arrData[1] = false;
+        }
+        
+    }
+
+    //身份证号验证
     $('#idCard').blur(function(){
         var strName = $(this).val()
         // var c = '210300198511112149';
         var res= IdentityCodeValid(strName);
         // console.log( res )
         if ( res ) {
-           // data.test('身份证号输入正确')
             data.arrData[2] = true;
-            judgeColor()
+            // judgeColor()
         } else {
-            judgeCloseColor()
+            // judgeCloseColor()
             data.test(data.tip)
             data.arrData[2] = false;
             $(this).val('')
@@ -75,8 +110,42 @@ $(function(){
         }
     })
 
-     //延迟一秒消息框消失
 
+    function idCard(_this){
+        var strName = $(_this).val();
+        var res= IdentityCodeValid(strName);
+        console.log( strName.length )
+        if ( res ) {
+            data.arrData[2] = true;
+            judgeColor()
+        } else{
+            if( strName.length==18 ){
+                data.test(data.tip)
+                delay()
+            }
+            judgeCloseColor()
+            data.arrData[2] = false;
+        }
+        
+    }
+
+    //键盘事件验证
+    $("#readyName").keyup(function(e){
+        // console.log('键盘事件')
+        readName(this)
+    })
+
+    $("#idCard").keyup(function(e){
+        // console.log('键盘事件')
+        idCard(this)
+    })
+
+    $("#cryptonym").keyup(function(e){
+        // console.log('键盘事件')
+        cryptonym(this)
+    })
+
+     //延迟一秒消息框消失
      function delay(){
         setTimeout(function(){
             $('.message-box').hide();
@@ -104,7 +173,6 @@ $(function(){
             //console.log('error')
             return false;
         }
-        
     })
 
     function judgeColor(){
@@ -115,24 +183,21 @@ $(function(){
     }
 
     function judgeCloseColor(){
-
         $("#myDatasubmit").addClass('color-f2-a').removeClass('color-bk-a');
     }
-
 
     //身份证的正则验证
     function IdentityCodeValid(code) { 
         var city={11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",21:"辽宁",22:"吉林",23:"黑龙江 ",31:"上海",32:"江苏",33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南",42:"湖北 ",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",51:"四川",52:"贵州",53:"云南",54:"西藏 ",61:"陕西",62:"甘肃",63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外 "};
         // var data.tip = "";
         var pass= true;
-        
         if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)){
-            data.tip = "身份证号格式错误";
+            data.tip = "身份证号码输入错误";
             pass = false;
         }
         
        else if(!city[code.substr(0,2)]){
-            data.tip = "身份证号地址编码错误";
+            data.tip = "身份证号码输入错误";
             pass = false;
         }
         else{
@@ -155,7 +220,7 @@ $(function(){
                 }
                 var last = parity[sum % 11];
                 if(parity[sum % 11] != code[17]){
-                    data.tip = "身份证号校验错误";
+                    data.tip = "身份证号码输入错误";
                     pass =false;
                 }
             }
@@ -167,7 +232,17 @@ $(function(){
         return pass;
     }
     
-    
+    //获取焦点事件
 
+    function deleteFont(obj){
+        $(obj).focus(function(){
+            // console.log( '焦点事件',this,$(this).attr('placeholder') )
+            $(obj).attr('placeholder','') 
+        })
+    }
+    deleteFont('#cryptonym');
+    deleteFont('#readyName');
+    deleteFont('#idCard');
+    
     
 })

@@ -36,7 +36,7 @@
         ServletActionContext.getRequest().getParameter("action");
         InputStream inputStream = request.getInputStream() ;
         byte[] reqBytes = IOUtils.toByteArray(inputStream) ;
-        if(inputStream != null ) {
+        if( inputStream != null ) {
             try {
                 inputStream.close();
             } catch (Exception e) {

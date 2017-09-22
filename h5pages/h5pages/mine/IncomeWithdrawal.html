@@ -12,34 +12,105 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/IncomeWithdrawal.css">
     <script src="../js/jquery.min.js"></script>
-
-    <!-- <script src="../js/zepto.js"></script> -->
-    <!-- <script src="../js/touch.js"></script> -->
     <script src="../js/base.js"></script>
     <script src="../js/benefits.js"></script>
     <style>
         .mask{
+            display:none;
+        }
+
+        .mask .pop{
+            height: 4.1rem;
+            font-size: .13rem;
+            text-align: center;
+        }
+
+        .mask .pop h3{
+            margin:.4rem 0 .2rem;
+            font-size: .16rem;
+        }
+
+        .mask .pop p{
+            padding:0 .14rem;
+            text-align: left;
+        }
+
+        .mask .pop .bottom1::after{
+            content: "";
+            pointer-events: none; 
+            box-sizing: border-box;
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            clear: both;
+            left: 0%;
+            top: 100%;
+            border-top: 1px solid #e6e6e6;
+            -webkit-transform:scale(0.5);
+            -webkit-transform-origin: 0 0;
+            transform:scale(0.5);
+            transform-origin: 0 0;
+        }
+        
+        
+        .mask .pop .hint{
+            margin-top: .15rem;
+        }
+
+        .mask .pop .bottom1{
+            padding-bottom: .15rem;
+            position: relative;
+        }
+
+        .mask .pop .tax{
+            margin-bottom: .18rem;
+        }
+
+        .mask .pop .rise{
+            margin-bottom: .12rem;
+        }
+
+        .tax b{
+            font-weight: normal;
+            vertical-align: 0;
+        }
+
+        #sure_submit{
+            margin-top: .2rem;
+            height: .5rem;
+            text-align: center;
+            line-height: .5rem;
+            font-size: .16rem;
+            color: #555555;
+            /* background: #C51515; */
+            border-top: 1px solid #e6e6e6;
+        }
+
+
+        .message-box{
+            z-index: 999;
+            position: absolute;
+            border-radius: 5px;
+            left:0;
+            right:0;
+            top:3rem;
+            bottom:0;
+            margin: auto;
+            width:1.5rem;
+            height:.5rem;
+            font-size: .12rem;
+            text-align: center;
+            background: #999;
+            color:#fff;
             display: none;
         }
 
-        .confirm-box{
-            position: absolute;
-            cursor: pointer;
-            left: 0;
-            top: 3rem;
-            right:0;
-            bottom: 0;
-            margin: auto;
-            width: 1.8rem;
-            height: .5rem;
-            background: #999;
-            border-radius: 8px;
-            color:#fff;
-            display: none;
-            line-height: .5rem;
-            text-align: center;
-            font-family: HelveticaNeue,Helvetica,Arial,sans-serif;
-            font-size: .12rem;
+        .message-box span{
+            width:1.5rem;
+            height:.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center
         }
 
         .sum input{
@@ -50,9 +121,9 @@
 
         input[type=number]::-webkit-outer-spin-button {
 
-        -webkit-appearance: none;
+            -webkit-appearance: none;
 
-        margin: 0;
+            margin: 0;
 
         }
 
@@ -70,6 +141,23 @@
             padding: 0.02rem;
         }
 
+        .sum span{
+            display:inline-block;
+            height: 89%;
+            vertical-align: -.05rem;
+        }
+
+        .logo{
+            position: relative;
+        }
+
+        .logo-detail{
+            color:#fff;
+            position: absolute;
+            right: .1rem;
+            font-size: .13rem;
+        }
+
 
 
     </style>
@@ -77,17 +165,19 @@
 <body>
  <header>
       <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
-      <div class="logo">收益提现</div>
+      <div class="logo">收益提现
+          <a class="logo-detail" href="./withdrawDetail.html">提现明细</a>
+      </div>
     </header>
     <div class="help"></div>
 
     <div class="earning-wp">
         <span>
-          <p class="num">11</p>
+          <p class="num">22</p>
           <p class="intro">本月新增收益</p>
         </span>
       <span>
-          <p class="num">11</p>
+          <p class="num">33</p>
           <p class="intro">累计收益</p>
         </span>
       <span>
@@ -98,12 +188,11 @@
 
     <div class="withdraw">
       <span class="withdraw-span1">当前可提现额度</span>
-      <span  class="withdraw-span2">¥22</span>
+      <span  class="withdraw-span2">¥2200</span>
     </div>
 
  <div class="sum">
      <span>￥</span><input name="cashNum" type="number"  id="max_limit" placeholder="输入要提现的额度">
-     <!-- <span class="place">输入要提现的额度</span> -->
  </div>
 
  <div class="login color-f2-a submit_apply">提交提现申请</div>
@@ -111,12 +200,22 @@
  <div class="mask">
      <div class="shade"></div>
      <div class="pop" >
-          <span>您的提现申请已经提交，官方工作人员会在三个工作日内审核并批准您的申请，将款项打入您的银行账户中，请密切关注，及时查收。
-          </span>
-         <div id="sure_submit">确定</div>
+        <h3>您的提现申请已经提交</h3>
+        <p class="bottom1">官方工作人员会在三个工作日内审核并批准您的申请，将款项打入您的银行账户中，请密切关注，及时查收。</p>
+        <p class="hint">温馨提示:</p>
+        <p class="tax">系统需要暂扣20%个人所得税<b class="person"></b>元，所以实际到账金额是<b class="after-tax"></b>元，暂扣额度需要提交全额发票至公司后才可以领取</p>
+        <p class="rise">发票抬头:上海连舟科技有限公司</p>
+        <p>发票寄往:</p>
+        <p>四川省成都市锦江区东大街时代8号2301室</p>
+        <p>收件人:王苗</p>
+        <p>电话:18283839705</p>
+        <p id="sure_submit">确定</p>
+            <!-- <div id="sure_submit">确定</div> -->
      </div>
  </div>
- <div class="confirm-box"></div>
+ <div class="message-box">
+    <span></span>
+ </div>
 
 </body>
 </html>

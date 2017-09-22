@@ -1,0 +1,7 @@
+// user/userFindPwd.jsp
+{
+  "phone": "手机号码",
+  "passwd": "密码",
+  "type": "FIND",
+  "verifyCode": ""
+}

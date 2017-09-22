@@ -2,9 +2,11 @@
 $(function(){
     var register = {
         strUser:/^\d{11}$/,
-        arrRegister:[false,false,true],
+        arrRegister:[false,false,false],
         strPassword:/^(?!\D+$)(?![^a-zA-Z]+$)\S{3,20}$/,
+        strVerifyCode:/^\d{6}$/,
         achePassword:null,
+        href:window.location.href,
         num:60
     }
 
@@ -35,7 +37,7 @@ $(function(){
      function delay(){
         setTimeout(function(){
             $('.message-box').hide();
-        },1000)
+        },2000)
     }
 
 
@@ -53,13 +55,69 @@ $(function(){
 
     }
 
+    //验证码验证
+    $("#verifyCode").blur(function(){
+        var value = $(this).val();
+        // console.log('验证码验证')
+        if ( register.strVerifyCode.test(value) ) {
+            register.arrRegister[2] = true;
+            // console.log('验证码验证','success')
+        } else {
+            register.arrRegister[2] = false;
+            // console.log('验证码验证','error')
+            $('.message-box').show().find('span').html('请输入验证码');
+            delay()
+        }
+
+    })
+
 
     //点击提交按钮
-    $("#register").on('click',function(){       
+    $("#register").on('click',function(){  
+        // console.log(register.href)     
         //  console.log( register.arrRegister[0], register.arrRegister[1], register.arrRegister[2] )
          if ( register.arrRegister[0] && register.arrRegister[1] && register.arrRegister[2] ) {
-             window.location.href = './login.html'
-             console.log('success')
+            console.log('验证成功，发送信息');
+            var phone = $('#phone').val();
+            var password = $('#password').val();
+            var verifyCode = $('#verifyCode').val();
+            var deff = $.ajax({
+                type: "post",//post
+                url : "user/userFindPwd.jsp",//user/userFindPwd.jsp//data/user/找回密码应答.json
+                data: {
+                    "phone": phone,
+                    "passwd": password,
+                    "type": "FIND",
+                    "verifyCode": verifyCode
+                  },
+                contentType:"application/x-www-form-urlencoded;charset=utf-8",
+                dataType: "json"
+            });
+        
+            //成功事件
+            deff.done(function(res){
+                var resultMsg = res.resultMsg;
+               console.log( 'success',res,res.resultMsg )
+                if ( res.result =='OK' ) {
+
+                    if (  register.href.indexOf('user')>-1 ) {
+                        window.location.href = '../login.html'
+                    } else {
+                        window.location.href = './login.html'
+                    }
+                    console.log('OK')
+                } else if ( res.result =='ERROR' ) {
+                    $('.message-box').show().find('span').html(resultMsg);
+                    delay()
+                    console.log('error')
+                }
+            })
+        
+            //失败事件
+            deff.fail(function(res){
+                console.log('error',res)
+            })
+            
          } else {
             var value = $("#password").val();
             var phone = $("#phone").val();
@@ -67,34 +125,11 @@ $(function(){
                 $('.message-box').show().find('span').html('请输入手机号和密码');
                 delay()
              } 
-           
-            if (  register.arrRegister[0] ) {
-                
-                if ( value ) {
-                    $('.message-box').show().find('span').html('请重新输入密码,密码是3位到20位字母和数字组合');
-                    delay()
-                } else{
-                    $('.message-box').show().find('span').html('请输入密码');
-                    delay()
-                }
-               
-            } 
-
-            if (  register.arrRegister[1] ) {
-                $('.message-box').show().find('span').html('请输入手机号');
-                delay()
-            } 
-             console.log('error')
+            //  console.log('error')
              return false;
          }
      }) 
 
-     //监听事件
-
-     /* $("#register").get(0).addEventListener('click', function() { 
-         console.log('111');
-     
-     });  */
 
      
      //获取验证码，倒计时
@@ -132,22 +167,35 @@ $(function(){
 
       //键盘按下事件
       $("#password").keyup(function(e){
-        console.log(111123)
-        var value = e.target.value;
-        var phone = $("#phone").val();
-        console.log('密码的键盘事件',phone,value)
-        if ( register.strPassword.test(value) ) {
-            register.arrRegister[1] = true;
-              console.log(true)          
-        } else {
-            register.arrRegister[1] = false;
-        }
-        eventKeyup()
-    })
+            var value = e.target.value;
+            var phone = $("#phone").val();
+            // console.log('密码的键盘事件',phone,value)
+            if ( register.strPassword.test(value) ) {
+                register.arrRegister[1] = true;
+                //   console.log(true)          
+            } else {
+                register.arrRegister[1] = false;
+            }
+            eventKeyup()
+      })
+
+
+      $("#verifyCode").keyup(function(e){
+            var value = e.target.value;
+            // var phone = $("#phone").val();
+            // console.log('密码的键盘事件',phone,value)
+            if ( value=="" ) {
+                register.arrRegister[2] = false;
+                //   console.log(true)          
+            } else if( register.strVerifyCode.test(value) ){
+                register.arrRegister[2] = true;
+            }
+            eventKeyup()
+      })
 
 
     function eventKeyup(){
-        if (  register.arrRegister[0] &&  register.arrRegister[1] ) {
+        if (  register.arrRegister[0] &&  register.arrRegister[1] && register.arrRegister[2] ) {
             loginButton()
         } else{
             loginClose()
