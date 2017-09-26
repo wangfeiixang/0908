@@ -15,8 +15,8 @@
     <script src="../js/base.js"></script>
 
     <style>
-        .span_1{
-            color:#FF5A6E !important;
+        .span-reduce{
+            color:#FF5A6E;
         }
 
     </style>
@@ -69,3 +69,23 @@
     </ul>
   </body>
 </html>
+<script>
+
+    $(function(){
+
+        addColor();
+        function addColor(){
+            for( var i = 0;i<$('.span1').length;i++  ){
+                 console.log( $(  $('.span1')[i] ).html() )
+//                var ali = $('.span1')[i];
+                if ( $(  $('.span1')[i] ).html().indexOf("-") == -1 ) {
+                    $( $('.span1')[i] ).addClass('span-reduce').removeClass('span1')
+                }
+            }
+        }
+
+
+
+
+    })
+</script>

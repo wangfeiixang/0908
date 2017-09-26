@@ -15,30 +15,81 @@
     <script src="../../js/base.js"></script>
 
     <style>
-        .span_1{
-            color:#FF5A6E !important;
+        .span-reduce{
+            color:#FF5A6E;
+            display: block;
+            font-size: .14rem;
+            line-height: .20rem;
+            letter-spacing: 0.01px;
+            margin-top: 0.08rem;
         }
 
     </style>
 </head>
 <body>
    <header>
-      <a class="back"  href="#" onClick="javascript :history.back(-1);"></a>
+      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo">余额明细</div>
     </header>
     <div class="help"></div>
 
+    <!--<div class="tab">-->
+      <!--<router-link to="/Income" tag="span" class="span router-link-active" :class="">收入</router-link>-->
+      <!--<router-link to="/Expend" tag="span" class="span" :class="">支出</router-link>-->
+    <!--</div>-->
 
     <ul class="Income-ul">
 
+<!-- <#list  recordList?if_exists  as recordVo> -->
       <li class="Income">
-        <span class="Income-span1">购买红钻会员,消费0.1人民币</span>
+        <span class="Income-span1">${recordVo.recordDesc}</span>
         <span class="Income-span2">
-              <span class="span1">${recordVo.recordNum}</span>
+              <span class="span1">-0.2</span>
               <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
-              <span class="span2">2017-08-26</span>
+              <span class="span2">2017-06-21</span>
             </span>
       </li>
+      <li class="Income">
+        <span class="Income-span1">${recordVo.recordDesc}</span>
+        <span class="Income-span2">
+              <span class="span1">-0.2</span>
+              <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
+              <span class="span2">2017-06-21</span>
+            </span>
+      </li>
+      <li class="Income">
+        <span class="Income-span1">${recordVo.recordDesc}</span>
+        <span class="Income-span2">
+              <span class="span1">-0.2</span>
+              <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
+              <span class="span2">2017-06-21</span>
+            </span>
+      </li>
+      <li class="Income">
+        <span class="Income-span1">${recordVo.recordDesc}</span>
+        <span class="Income-span2">
+              <span class="span1">+0.2</span>
+              <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
+              <span class="span2">2017-06-21</span>
+            </span>
+      </li>
+      <li class="Income">
+        <span class="Income-span1">${recordVo.recordDesc}</span>
+        <span class="Income-span2">
+              <span class="span1">-0.2</span>
+              <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
+              <span class="span2">2017-06-21</span>
+            </span>
+      </li>
+      <li class="Income">
+        <span class="Income-span1">${recordVo.recordDesc}</span>
+        <span class="Income-span2">
+              <span class="span1">-0.2</span>
+              <!--<span class="span1 span_1">+${incomeDetailVo.incomeNum}</span>-->
+              <span class="span2">2017-06-21</span>
+            </span>
+      </li>
+    <!-- </#list> -->
       <!--<li class="Income">-->
         <!--<span class="Income-span1">获得来自***的 返利收益</span>-->
         <!--<span class="Income-span2">-->
@@ -63,3 +114,23 @@
     </ul>
   </body>
 </html>
+<script>
+
+    $(function(){
+
+        addColor();
+        function addColor(){
+            for( var i = 0;i<$('.span1').length;i++  ){
+                 console.log( $(  $('.span1')[i] ).html() )
+//                var ali = $('.span1')[i];
+                if ( $(  $('.span1')[i] ).html().indexOf("-") == -1 ) {
+                    $( $('.span1')[i] ).addClass('span-reduce').removeClass('span1')
+                }
+            }
+        }
+
+
+
+
+    })
+</script>

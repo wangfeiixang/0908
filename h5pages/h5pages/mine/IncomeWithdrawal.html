@@ -20,14 +20,14 @@
         }
 
         .mask .pop{
-            height: 4.1rem;
+            height: 400px;
             font-size: .13rem;
             text-align: center;
         }
 
         .mask .pop h3{
-            margin:.4rem 0 .2rem;
-            font-size: .16rem;
+            margin:.3rem  0  .2rem;
+            font-size:.16rem;
         }
 
         .mask .pop p{
@@ -75,17 +75,32 @@
             vertical-align: 0;
         }
 
+        #sure_submit::before{
+            content: "";
+            pointer-events: none; 
+            box-sizing: border-box;
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            clear: both;
+            left: 0%;
+            top: 0%;
+            border-top: 1px solid #e6e6e6;
+            -webkit-transform:scale(0.5);
+            -webkit-transform-origin: 0 0;
+            transform:scale(0.5);
+            transform-origin: 0 0;
+        }
+
         #sure_submit{
-            margin-top: .2rem;
+            margin-top: 20px;
             height: .5rem;
             text-align: center;
             line-height: .5rem;
             font-size: .16rem;
             color: #555555;
-            /* background: #C51515; */
-            border-top: 1px solid #e6e6e6;
+            position: relative;
         }
-
 
         .message-box{
             z-index: 999;
@@ -158,13 +173,14 @@
             font-size: .13rem;
         }
 
-
-
+        header a.back{
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
  <header>
-      <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
+      <a class="back"  onClick="javascript :window.history.back();return false;"></a>
       <div class="logo">收益提现
           <a class="logo-detail" href="./withdrawDetail.html">提现明细</a>
       </div>
@@ -173,22 +189,22 @@
 
     <div class="earning-wp">
         <span>
-          <p class="num">22</p>
+          <p class="num">220</p>
           <p class="intro">本月新增收益</p>
         </span>
       <span>
-          <p class="num">33</p>
+          <p class="num">330</p>
           <p class="intro">累计收益</p>
         </span>
       <span>
-          <p class="num">11</p>
+          <p class="num">180</p>
           <p class="intro">冻结收益</p>
         </span>
     </div>
 
     <div class="withdraw">
       <span class="withdraw-span1">当前可提现额度</span>
-      <span  class="withdraw-span2">¥2200</span>
+      <span  class="withdraw-span2">¥28200</span>
     </div>
 
  <div class="sum">
@@ -201,7 +217,7 @@
      <div class="shade"></div>
      <div class="pop" >
         <h3>您的提现申请已经提交</h3>
-        <p class="bottom1">官方工作人员会在三个工作日内审核并批准您的申请，将款项打入您的银行账户中，请密切关注，及时查收。</p>
+        <p class="bottom1">官方工作人员会在七个工作日内审核并批准您的申请，将款项打入您的银行账户中，请密切关注，及时查收。</p>
         <p class="hint">温馨提示:</p>
         <p class="tax">系统需要暂扣20%个人所得税<b class="person"></b>元，所以实际到账金额是<b class="after-tax"></b>元，暂扣额度需要提交全额发票至公司后才可以领取</p>
         <p class="rise">发票抬头:上海连舟科技有限公司</p>
@@ -218,4 +234,5 @@
  </div>
 
 </body>
+  
 </html>

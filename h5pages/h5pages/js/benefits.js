@@ -6,6 +6,7 @@ $(function(){
         arrTrue:[false,false],
         data:null,
         valueAfter:null,
+        value:null,
         valueBefore:null,
         strNumber:/^\d+$/,
         wipeOff:function(){
@@ -86,16 +87,17 @@ $(function(){
             // $('.mask').show();
             data_money.sum ='';
             data_money.valueBefore = $('#max_limit').val()/5;
+            data_money.value = $('#max_limit').val();
             data_money.valueAfter = $('#max_limit').val()*4/5;
             // console.log( data_money.sum,data_money.valueBefore,data_money.valueAfter )
             var deff = $.ajax({
-               /*  type: "get",//post
-                url : "../data/user/用户提现应答.json",//../user/userGetCash.jsp//../data/user/用户提现应答.json */
-                type: "post",
-                url : "../user/userGetCash.jsp",
+                type: "get",//post
+                url : "../data/user/用户提现应答.json",//../user/userGetCash.jsp//../data/user/用户提现应答.json
+                /* type: "post",
+                url : "../user/userGetCash.jsp", */
                 data: {
                     "action": "userGetCash",
-                    "getCashNum": data_money.valueAfter
+                    "getCashNum": data_money.value
                 },
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json"
@@ -151,6 +153,60 @@ $(function(){
        
         //跳转地址
     })
+
+    //不同手机屏幕显示不同
+    diviceWidth()
+    
+    function diviceWidth(){
+
+        var diviceWidth = document.documentElement.clientWidth;
+        if ( diviceWidth>370 ) {
+            $('.pop').css({'height':'410px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>400 ) {
+            $('.pop').css({'height':'465px'})
+            // console.log(111)
+        } 
+
+        if ( diviceWidth>410 ) {
+            $('.pop').css({'height':'480px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>434 ) {
+            $('.pop').css({'height':'490px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>450 ) {
+            $('.pop').css({'height':'502px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>460 ) {
+            $('.pop').css({'height':'514px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>470 ) {
+            $('.pop').css({'height':'530px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>475 ) {
+            $('.pop').css({'height':'535px'})
+            // console.log(111)
+        }
+
+        if ( diviceWidth>485 ) {
+            $('.pop').css({'height':'555px'})
+            // console.log(111)
+        }
+    }
+    
+            
 
 
    

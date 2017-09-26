@@ -82,8 +82,10 @@ $(function(){
             var password = $('#password').val();
             var verifyCode = $('#verifyCode').val();
             var deff = $.ajax({
-                type: "post",//post
-                url : "user/userFindPwd.jsp",//user/userFindPwd.jsp//data/user/找回密码应答.json
+                /* type: "post",//post
+                url : "user/userFindPwd.jsp",//user/userFindPwd.jsp//data/user/找回密码应答.json */
+                type: "get",
+                url : "data/user/找回密码应答.json",
                 data: {
                     "phone": phone,
                     "passwd": password,
@@ -100,12 +102,13 @@ $(function(){
                console.log( 'success',res,res.resultMsg )
                 if ( res.result =='OK' ) {
 
-                    if (  register.href.indexOf('user')>-1 ) {
+                   /*  if (  register.href.indexOf('user')>-1 ) {
                         window.location.href = '../login.html'
                     } else {
                         window.location.href = './login.html'
-                    }
+                    } */
                     console.log('OK')
+                    // window.location.href = './login.html';
                 } else if ( res.result =='ERROR' ) {
                     $('.message-box').show().find('span').html(resultMsg);
                     delay()
