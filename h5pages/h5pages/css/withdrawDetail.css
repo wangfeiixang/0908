@@ -1,0 +1,76 @@
+
+.Income-ul {
+    width: 100%;
+  }
+
+.Income {
+    width: 95%;
+    height: 0.55rem;
+    margin-left: 0.15rem;
+    padding: .12rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.Income:after{
+    content: "";
+    pointer-events: none; 
+    box-sizing: border-box;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    clear: both;
+    left: 0%;
+    top: 0%;
+    border-bottom:1px solid #b7b3b3;
+    -webkit-transform:scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform:scale(0.5);
+    transform-origin: 0 0;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+    text-align: right;
+}
+
+.money{
+    font-size: .13rem;
+    display: block;
+}
+
+.color{
+    display: inline-block;
+    vertical-align: 0;
+    margin-left: .03rem;
+}
+
+.right-money{
+    display: block;
+    font-size: .13rem;
+}
+
+.right-top{
+    display: block;
+    margin-top: 3px;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: #36CC36;
+}
+
+
+.time{
+    margin-top: 4px;
+    display: block;
+    font-size: .11rem;
+    color: #AAAAAA;
+}

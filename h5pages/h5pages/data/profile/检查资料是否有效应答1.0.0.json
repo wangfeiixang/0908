@@ -1,0 +1,4 @@
+{
+  "result": "OK/ERROR", // 检查结果数据如果可用返回OK，否则返回ERROR
+  "resultMsg": "提示语"
+}

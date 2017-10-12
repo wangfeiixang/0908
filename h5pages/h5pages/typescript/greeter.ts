@@ -179,7 +179,6 @@ printLabel(myObj); */
         }
     }
     
-
     class Horse extends Animal {
         constructor(name: string) { super(name); }
         move(distanceInMeters = 45) {
@@ -187,7 +186,6 @@ printLabel(myObj); */
             super.move(distanceInMeters);
         }
     }
-    
 
     let sam = new Snake("Sammy the Python");
     let tom: Animal = new Horse("Tommy the Palomino");

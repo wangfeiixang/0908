@@ -1,0 +1,12 @@
+{
+  "result": "OK/ERROR",
+  "resultMsg": "提示语",
+  "totalPage":"",
+  "page":"当前请求的页面",
+  "detail":[
+    {
+      "cashNum":"提现金额",
+      "date":"提现日期"
+    }
+  ]
+}

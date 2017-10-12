@@ -162,9 +162,6 @@ $(function(){
         $("#login").on('click',function(){       
             //console.log( login.arrLogin )
                 if ( login.arrLogin[0] && login.arrLogin[1] ) {//都验证成功，才能提交登录
-                    //  judgeSkip()
-                    /*return false; */
-                    //console.log('登录成功')
                 } else {
                     var value = $("#password").val();
                     var phone = $("#user").val();
@@ -189,7 +186,6 @@ $(function(){
                         $('.message-box').show().find('span').html('请输入手机号');
                         delay()
                     } 
-
                    // console.log('登陆失败')
                     return false;
                 }
@@ -199,12 +195,7 @@ $(function(){
         
         //忘记密码，跳转lost-password.html
         $(".log-p").on('tap', function(){
-            
-            if (  login.href.indexOf('user')>-1 ) {
-                window.location.href = '../lost-password.html'
-            } else {
-                window.location.href = './lost-password.html'
-            }
+            href('lost-password');
             //window.location.href = "./lost-password.html"
         } )
     
@@ -217,8 +208,17 @@ $(function(){
        
         //跳转注册页面
         $('.sign-no span').on('tap',function(){
-            window.location.href = "./sign_in.html"
+            href('sign_in');
         })
+
+        //跳转页面
+        function href(page){
+            if (  login.href.indexOf('user')>-1 ) {
+                window.location.href = '../'+page+'.html'
+            } else {
+                window.location.href = './'+page+'.html'
+            }
+        }
 
 
        //根据返回的数据进行判断
@@ -296,10 +296,5 @@ $(function(){
      
       getUserDate()
 
-       //跳转忘记密码页面
-
-
-      
-      
         
     })

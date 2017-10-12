@@ -1,0 +1,6 @@
+// user/checkData.jsp
+{
+  "action": "checkData",
+  "type": "PHONE 检查手机号; IDENTITY   身份证号",
+  "data":""
+}

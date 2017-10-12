@@ -101,12 +101,6 @@ $(function(){
                 var resultMsg = res.resultMsg;
                console.log( 'success',res,res.resultMsg )
                 if ( res.result =='OK' ) {
-
-                   /*  if (  register.href.indexOf('user')>-1 ) {
-                        window.location.href = '../login.html'
-                    } else {
-                        window.location.href = './login.html'
-                    } */
                     console.log('OK')
                     // window.location.href = './login.html';
                 } else if ( res.result =='ERROR' ) {
@@ -136,7 +130,6 @@ $(function(){
 
      
      //获取验证码，倒计时
-     
      $(".register-code").on('tap',function(){
          if (  register.arrRegister[0] ) {
              console.log('开始倒计时')
