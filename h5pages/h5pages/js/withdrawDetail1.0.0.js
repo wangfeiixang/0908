@@ -37,7 +37,7 @@ $(function(){
                             result +=   '<li class="Income">'
                                             +'<div class="left">'
                                                 +'<span class="money">提现金额<span class="color">'+parseInt(ele[i].cashNum)+'元</span> </span>'
-                                                +'<span class="time">2017-06-21</span>'
+                                                +'<span class="time">'+ele[i].date+'</span>'
                                             +'</div>'
                                             +'<div class="right">'
                                                 +'<span class="right-money">实际到账<span class="color red">'+parseInt(ele[i].cashNum*0.8)+'元</span> </span>'
@@ -54,9 +54,9 @@ $(function(){
                     }
 
                     setTimeout(function(){
-                          // 插入数据到页面，放到最后面
+                        // 插入数据到页面，放到最后面
                         $('.Income-ul').append(result);
-                            // 每次数据插入，必须重置
+                        // 每次数据插入，必须重置
                         //如果数据总页数大于page的页数
                         if (  detail.page >= detail.totalPage ) {
                             detail.page = detail.totalPage

@@ -1,54 +1,113 @@
 
-.img1 {
-	width: 100%;
-	height: auto;
-	float: left;
-	margin-top: -0.01rem;
+body,html{
+    width:100%;
+    height:100%;
+    font-family: PingFangSC-Medium;
+    background: #ffd75b;
+}
+.content{
+    width:100%;
+    height:100%;
+    position: relative;
+    background:url('../img/myShare/body2.png') no-repeat top center;
+    background-size:100%;
+    margin-top: -50px;
 }
 
-.wp {
-	position: relative;
+.message{
+    width:100%;
+    height:100%;
+    position: relative;
 }
 
-.member-img {
-    width: .75rem;
-    height: .75rem;
+.bottom{
     position: absolute;
-    left: 50%;
-    margin-left: -.37rem;
-    margin-top: 0.23rem;
-}
-
-p {
-	width: 81%;
-	position: absolute;
-	font-family: PingFangSC-Regular;
-	font-size: .16rem;
-	color: #FFFFFF;
-	letter-spacing: 0.01px;
-	line-height: .26rem;
-    left: 50%;
-    margin-left: -40%;
-    top: 1.1rem;
-}
-
-.member-img img {
-    width: 100%;
-}
-
-.button {
-	width: 77%;
-	background: #F42C49;
-	border-radius: 100px;
-	font-family: PingFangSC-Medium;
-	font-size: 0.15rem;
-	color: #FFFFFF;
-	height: 0.35rem;
-	letter-spacing: 0.01px;
-	line-height: .35rem;
-	position: absolute;
-    left: 50%;
-    margin-left: -38%;
-    top: 5rem;
+    left:40px;
+    top:525px;
+    width:2.8rem;
+    height:.35rem; 
+    background:rgba(244,44,73,1);
+    border-radius: 1rem ; 
     text-align: center;
+    line-height: .35rem;
+}
+
+.head{
+    position: absolute;
+    left:36.5px;
+    top:105px;
+    text-align: center;
+    font-size: .16rem;
+    color: #fff;
+}
+
+
+.head p{
+    margin-bottom: 4px;
+}
+
+.friend span,.recommend span{
+    display: inline-block;
+    vertical-align: 0px;
+}
+
+.recommend span{
+    color: #F8E71C;
+}
+
+.download{
+    font-size: .11rem;
+}
+
+
+.head img{
+    width:.6rem;
+    height: .6rem;
+    display: block;
+    margin: 0 auto;
+
+}
+
+
+.bottom p a{
+    display: block;
+    font-size: .15rem;
+    color: #fff;
+        /* padding: 10px; */
+     margin-bottom: 10px;
+}
+
+.center{
+    position: absolute;
+    left:99px;
+    top:280px;
+}
+
+.center p{
+    text-align: center;
+    line-height:.22rem;
+    font-size: .12rem;
+}
+
+.center p:first-child{
+    letter-spacing:0.01px;
+    width: 1.6rem;
+    /* height: .54rem; */
+    color: #F42C49;
+    margin-bottom: 5px;
+    font-size: .16rem;
+    
+}
+
+.center p:nth-child(2),.center p:nth-child(3),.center p:nth-child(4){
+    text-align: center;
+    letter-spacing:0.01px;
+    color: #1E2617;
+    font-size: .13rem;
+}
+
+.center p:last-child{
+    color:#F42C49;
+    font-size: .16rem;
+    margin-top: 5px;
 }

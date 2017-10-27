@@ -35,7 +35,7 @@ $(function(){
                 html += '<li class="Income">'
                            +'<div class="left">'
                                +'<span class="money">提现金额<span class="color">'+ele.cashNum+'元</span> </span>'
-                               +'<span class="time">2017-06-21</span>'
+                               +'<span class="time">'+ele.date+'</span>'
                            +'</div>'
                            +'<div class="right">'
                                +'<span class="right-money">实际到账<span class="color red">'+ele.cashNum*0.8+'元</span> </span>'

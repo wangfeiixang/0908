@@ -137,3 +137,24 @@
 
 </body>
 </html>
+<script>
+
+    
+     function changeTime(data){
+        // console.log(data)
+         let _data = data;
+         _data.forEach(function(ele,i) {
+             console.log( ele.time.slice(1,ele.time.length) )
+            ele.time =  ele.time.substring(0, 10)
+            console.log( ele.time ) 
+            // _arr.push(ele)
+         });
+         data = _data;
+         console.log( data )
+         return  data;        
+     }
+
+     var data = [{1:'one',time:'2017-03-20T00:00:00'},{2:'one',time:'2017-03-30T00:00:00'},{3:'one',time:'2017-03-24T00:00:00'}];
+     
+     changeTime(data)
+</script>

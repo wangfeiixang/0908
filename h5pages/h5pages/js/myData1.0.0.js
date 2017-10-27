@@ -20,11 +20,11 @@ $(function(){
       },
       send:function(boolean,data,type){
             
-            // console.log( 111,type,this.arrData[3] )
+            console.log( 111,type,this.arrData[3] )
             var that = this; 
             var deff = $.ajax({
-                type: "get",//post
-                url : "../data/profile/检查资料是否有效应答.json",//"../data/profile/检查资料是否有效应答.json",//user/checkData.jsp
+                type: "post",//post
+                url : "../user/checkData.jsp",//"../data/profile/检查资料是否有效应答.json",//user/checkData.jsp
                 data: {"action": "checkData","type":"IDENTITY",data:data},
                 contentType:"application/x-www-form-urlencoded;charset=utf-8",
                 dataType: "json",
@@ -35,12 +35,12 @@ $(function(){
             deff.done(function(res){
                 console.log( 'success',res.result )
                 if ( res.result=="OK" ) {
-                    // console.log('ok')
+                    console.log('ok')
                     if ( type =='1' ) {
                         that.arrData[3] = true;
                     } 
                 } else if( res.result=="ERROR" ){
-                    // console.log('error');
+                    console.log('error');
                     if ( type =='1' ) {
                         that.arrData[3] = false;
                     } 
@@ -152,7 +152,7 @@ $(function(){
         // console.log( strName.length )
         if ( data.strIdcard.test( strName ) ) {
             data.arrData[2] = true;
-            // console.log( data.arrData[2],strName )
+            console.log( data.arrData[2],strName )
             // data.send(true,strName,1)
             judgeColor()
         } else{
@@ -164,6 +164,8 @@ $(function(){
             data.arrData[2] = false;
         }
 
+
+        
     }
 
     //键盘事件验证
@@ -203,35 +205,11 @@ $(function(){
     //提交
     $("#myDatasubmit").click(function(){
         judgeTrue()
-         /*var strName = $("#idCard").val();
-        var idDefault = $("#idCard").attr('placeholder');
-        if ( data.strIdcard.test( idDefault ) ) {
-            console.log( '默认身份证号码:'+idDefault )
-        } else{
-            console.log( '默认身份证号码不存在:'+idDefault )
-            // data.send(false,strName,1)
-            if ( data.arrData[3] ) {//OK
-                data.arrData[2] = true;
-            } else {//ERROR
-                data.arrData[2] = false;
-                // console.log( data.arrData[3],data.arrData[2] )
-                if ( !data.arrData[2] ) {
-                    $('.message-box').show().find('span').html('请重新输入身份号');
-                    delay(1000)
-                }
-                return false;
-            } 
-        }*/
-
-
-        // console.log( data.arrData )
-
         if ( data.arrData[0] || data.arrData[1] || data.arrData[2] ) {
-            console.log('success跳转')
-            // return false;
+            console.log('success')
             // return false;
         } else {
-            console.log('error，跳转失败')
+            //console.log('error')
             return false;
         }
     })
@@ -255,8 +233,8 @@ $(function(){
         })
     }
 
-    //如果身份证号有，就不需要再次输入
-    function idCardchange(){
+     //如果身份证号有，就不需要再次输入
+     function idCardchange(){
         var idDefault = $("#idCard").attr('placeholder');
         if ( data.strIdcard.test( idDefault ) ) {
             console.log( '默认身份证号码:'+idDefault )
@@ -287,6 +265,5 @@ $(function(){
     deleteFont('#idCard');
     idCardchange();
     namechange()
-    
     
 })

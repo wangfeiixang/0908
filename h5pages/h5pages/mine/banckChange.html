@@ -100,17 +100,24 @@
             color:#CA88ED;
         }
 
+        .color-f2-a {
+            background: #F2F2F2;
+            color:black;
+        }
 
-        /*  ::-webkit-input-placeholder{
-             color: #777 !important;
-         } */
+        .color-bk-a{
+            background: #CA88ED;
+            color: #fff;
+        }
+
+
 
 
 
     </style>
 </head>
 <body>
- <header>
+    <header>
       <a class="back"  onClick="javascript :window.history.back(); return false;"></a>
       <div class="logo"></div>
     </header>
@@ -127,11 +134,11 @@
     </div>
     <div class="input">
       <span class="sign-code">开户行姓名</span>
-      <input  autocomplete="off" type="text" name="trueName" id="trueName"  class="readyName" placeholder="请输入开户行姓名">
+      <input  autocomplete="off" type="text" name="trueName" id="trueName"  class="readyName" placeholder="请输入姓名">
     </div>
     <div class="input">
       <span class="sign-code">银行卡号</span>
-      <input  autocomplete="off" type="text" name="cardNo" id="cardNo" class="bankCard" placeholder="请输入银行卡号">
+      <input  autocomplete="off" type="text" name="cardNo" id="cardNo" class="bankCard" placeholder="1111111111">
     </div>
     <div class="input delete-border">
       <span class="sign-code">开户网点</span>
@@ -139,9 +146,8 @@
     </div>
     <div class="login color-f2-a" id="submitData">确定</div>
 
-    <div class="shade"   id="banckList_shade" style="display:none;" "></div>
+    <div class="shade"   id="banckList_shade" style="display:none;" ></div>
     <div class="banck-wp" id="banckList" style="display:none;" >
-    <!--<div class="banck-wp" id="banckList" style="display:none;" onclick="mySwitch()">-->
       <div class="banck-top">
         <span class="choose">选择您的银行</span>
         <span class="true">确认</span>
@@ -150,7 +156,7 @@
       <div class="banck">
         <div class="banck-li-wp">
           <ul>
-            <li class="banck-li" value="${bankInfoVo.bankId}">农业银行</li>
+            <li class="banck-li" value="">农业银行</li>
             <li class="banck-li" >工商银行</li>
             <li class="banck-li" >工商银行</li>
             <li class="banck-li" >工商银行</li>
@@ -164,5 +170,5 @@
      <span></span>
  </div>
 </body>
-<script src="../js/banckChange.js"></script>
+<script src="../js/banckChange1.0.0.js"></script>
 </html>
